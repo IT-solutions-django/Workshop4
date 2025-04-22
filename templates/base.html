@@ -33,6 +33,9 @@
 
     <!-- Local files -->
     <script src="{% static 'js/header.js' %}" defer=""></script>
+
+    <!-- Яндекс Карты -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     
     <title>{% block title %}{% endblock title %}</title>
     <meta name=description content="{% block description %}{% endblock %}">
@@ -135,52 +138,38 @@
     {% endblock content %}
     </main>
     
-    <!-- <footer>
+    <footer>
         <div class="container">
-            <div class="footer-inner">
-                <div class="footer-upper">
-                    <div class="footer__left">
-                        <a href="{% url 'home:home' %}" class="footer__logo-link">
-                            <img src="{% static 'images/logo.svg' %}" alt="Логотип">
-                        </a>
-                        <div class="footer__company-info">
-                            <p class="footer__company-info-description">Логистика, продажа, аренда контейнеров</p>
-                        </div>
-                    </div>
-                    <div class="footer__right">
-                        <div class="footer__column">
-                            <a href="" class="red-hover footer__column-subtitle">Рефконтейнеры</a>
-                            <div class="footer__list">
-                                {% for category in categories %}
-                                    <a href="" class="footer__column-item red-hover only-desktop">{{ category.name }}</a>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <div class="footer__column">
-                            <a href="" class="red-hover footer__column-subtitle">О компании</a>
-                            <div class="footer__list">
-                                <a class="footer__column-item red-hover only-desktop" href="">Документация</a>
-                                <a class="footer__column-item red-hover only-desktop" href="">Аренда контейнеров</a>
-                                <a class="footer__column-item red-hover only-desktop" href="">Политика конфиденциальности</a>
-                            </div>
-                        </div>
+            <div class="content">
+                <div class="left-column">
+                    <p class="address">690065, Приморский край, г. Владивосток, <br>ул. Пушкина 91</p>
+                    <div class="footer-contacts">
+                        <a href="" class="phone">+7 (984) 195-00-55</a>
+                        <a href="" class="email">info@ceh4.net</a>
                     </div>
                 </div>
-                <hr>
-                <div class="footer-lower">
-                    <div class="footer__copyright">
-                        <p>Техно Транс © 2025 </p>
-                    </div>
-                    <div class="header__right-part">
-                        <div class="header__right-part--phone">
-                            <a href="tel:{{ company_info.phone }}">{{ company_info.phone }}</a>
+                <div class="right-column">
+                    <div class="upper">
+                        <div class="links-list">
+                            <a href="">Главная</a>
+                            <a href="">Услуги</a>
+                            <a href="">О компании</a>
+                            <a href="">Контакты</a>
                         </div>
-                        
+                        <div class="links-list">
+                            <a href="">Whatsapp</a>
+                            <a href="">Вконтакте</a>
+                            <a href="">Телеграм</a>
+                        </div>
+                    </div>
+                    <div class="lower">
+                        © 2025, Общество с ограниченной ответственностью Конструкторское бюро "ЦЕХ№4"
                     </div>
                 </div>
             </div>
+            <img class="footer-logo" src="{% static 'images/logo.svg' %}" alt="">
         </div>
-    </footer> -->
+    </footer>
 </body>
 </html>
 </body>
