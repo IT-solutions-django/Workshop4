@@ -1292,3 +1292,62 @@ body,
         background-color: #F2F2F2;
     }
 }
+.services-page {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    padding-bottom: 116px;
+}
+.services-page .header {
+
+}
+.breadcrumbs {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    line-height: 22.4px;
+}
+.page-heading {
+    font-size: 60px;
+}
+.services-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.services-card {
+    border-radius: 28px;
+    background-color: #222222;
+    display: flex;
+    gap: 120px;
+    padding: 36px 32px;
+}
+.services-card .left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.services-card .right-column {
+    min-width: 740px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.service-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.service-card-heading {
+    font-size: 60px;
+    line-height: 64px;
+}
+.service-card-header .label {
+    font-size: 16px;
+    line-height: 22px;
+}
+.services-card__small-image {
+    object-fit: cover;
+    height: 268px;
+    border-radius: 28px;
+}

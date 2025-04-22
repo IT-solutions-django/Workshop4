@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block title %}Услуги{% endblock title %}
+
+{% block content %}
+<img class="main-bg" src="{% static 'images/main-bg.png' %}" alt="">
+
+<section class="services-page container">
+    <div class="header">
+        <div class="breadcrumbs">
+            <a>Главная</a>
+            <a>Услуги</a>
+        </div>
+        <h1 class="page-heading">Наши услуги</h1>
+    </div>
+    <div class="services-cards">
+        <div class="services-card">
+            <div class="left-column">
+                <div class="service-card-header">
+                    <p class="service-card-heading">Проектирование конструктивных решений</p>
+                    <p class="label">Мы разрабатываем надежные и эффективные конструктивные решения для объектов различного назначения</p>
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div class="right-column">
+                <img class="services-card__small-image" src="{% static 'images/service-card-1.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'home/includes/contact_section.html' %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}
