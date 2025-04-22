@@ -1,0 +1,568 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block content %}
+<img class="main-bg" src="{% static 'images/main-bg.png' %}" alt="">
+
+<section class="welcome-section container">
+    <div class="welcome-logo">
+        <img src="{% static 'images/logo.svg' %}" alt="">
+    </div>
+    <div class="welcome-header">
+        <h1>Обследование<br>и проектирование зданий</h1>
+        <p class="section-description">Обеспечиваем высокий уровень качества, безопасности<br> и надежности на каждом этапе работы</p>
+        <button class="red-button">Связаться с нами</button>
+    </div>
+</section>
+
+<section class="advantages-section container">
+    <div class="advantages-header">
+        <div class="advantages-subheader">
+            <div class="red-point-container">
+                <div class="red-point"></div>
+            </div>
+            <p class="uppercase">Почему выбирают нас</p>
+        </div>
+        <div class="advantages-header-body">
+            <h2>Надежные решения <br>
+                для вашего строительства <br>
+                и проектирования</h2>
+            <p class="section-description">Профессиональный подход, современные технологии и гарантированное качество <br>
+                для реализации ваших строительных проектов</p>
+        </div>
+    </div>
+    <div class="advantages-stats">
+        <div class="label">
+            Наши преимущества
+        </div>
+        <div class="advantages-stats-container">
+            <div class="advantages-stat">
+                <p class="heading">150+</p>
+                <p class="label">завершенных проектов</p>
+            </div>
+            <div class="advantages-stat">
+                <p class="heading">500 тыс+ </p>
+                <p class="label">м² площадь спроектированных объектов</p>
+            </div>
+            <div class="advantages-stat">
+                <p class="heading">до 100%</p>
+                <p class="label">проектов, выполненных с BIM-моделированием </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-section container">
+    <div class="services-header">
+        <h2 class="section-heading">Наши услуги</h2>
+        <p>Создаем надежные и эффективные<br>инженерные решения</p>
+    </div>
+    <div class="services-container box">
+        <div class="header box">
+            <div class="box-header">
+                <span class="badge">От ТЗ до сдачи документации</span>
+                <p class="box-heading">Проектирование <br>конструктивных решений</p>
+            </div>
+            <div class="tags">
+              <span class="tag">Проектирование</span>
+              <span class="tag">Конструкторская документация</span>
+              <span class="tag">Обследование зданий</span>
+              <span class="tag">Анализ прочности</span>
+              <span class="tag">Технический аудит</span>
+              <span class="tag">Инженерные расчёты</span>
+              <span class="tag">Проектирование</span>
+            </div>
+        </div>
+      
+        <div class="expertise box">
+            <img src="{% static 'images/services-expertise.png' %}" alt="Экспертиза">
+            <div class="box-text">
+              <p class="box-heading">Экспертиза</p>
+              <p>Оборудование<br>Сертификаты</p>
+            </div>
+        </div>
+      
+        <div class="survey box">
+            <img src="{% static 'images/services-survey.png' %}" alt="Обследование">
+            <div class="box-text">
+              <p class="box-heading">Обследование зданий</p>
+              <p>Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+            </div>
+        </div>
+      
+        <div class="support box">
+            <img src="{% static 'images/services-support.png' %}" alt="Сопровождение">
+            <div class="box-text">
+                <p class="box-heading">Сопровождение <br> проектов</p>
+                <p class="box-gray">Согласование с госорганами, авторский <br> надзор, корректировка документации</p>
+            </div>
+        </div>
+      
+        <div class="quote box">
+            <div class="quote-wrapper">
+                <p class="quote-text">"Наша компания объединяет опыт и инновации в области проектирования и разработки конструктивных решений. Мы создаем надёжные и эффективные проекты"</p>
+                <div class="quote-info">
+                  <img class="quote-author" src="{% static 'images/quote-author-example.png' %}" alt="Автор">
+                  <div class="quote-author-info">
+                    <p>Горбунов Игорь Андреевич</p>
+                    <small>Генеральный директор</small>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <img class="background" src="{% static 'images/contact-bg.png' %}" alt="">
+    <div class="container">
+        <div class="left-column">
+            <div class="contact-section-header">
+                <p class="section-heading">Свяжитесь с нами</p>
+                <small>Разработаем оптимальное решение для ваших задач. Вы получите</small>
+            </div>
+            <div class="stage-cards">
+                <div class="stage-card">
+                    <div class="stage-card-header">
+                        <p class="stage-card-number">01</p>
+                        <p class="stage-card-heading">Технико-коммерческое предложение </p>
+                    </div>
+                    <button class="gray-button">Подробнее</button>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-card-header">
+                        <p class="stage-card-number">02</p>
+                        <p class="stage-card-heading">Четкий план работ <br>от обследования до сдачи </p>
+                    </div>
+                    <button class="gray-button">Скачать пример</button>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-card-header">
+                        <p class="stage-card-number">03</p>
+                        <p class="stage-card-heading">Перечень необходимых <br>исходных данных </p>
+                    </div>
+                    <button class="gray-button">Получить перечень</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <form>
+                <div class="label">
+                    Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей
+                </div>
+                <div class="two-columns">
+                    <input placeholder="Имя" type="text">
+                    <input placeholder="Телефон"  type="text" name="" id="">
+                </div>
+                <textarea placeholder="Сообщение"  name="" id=""></textarea>
+                <div class="button-container">
+                    <button class="red-button">Связаться с нами</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="partners-section container">
+    <img class="partners-background" src="{% static 'images/partners-background.png' %}" alt="">
+    <img class="partners-bg-lines" src="{% static 'images/partners-bg-lines.png' %}" alt="">
+    <h2 class="section-heading">Нам доверяют</h2>
+    <div class="partners-body">
+        <div class="partners-stats partners-container">
+            <div class="partners-stat">
+                <p class="number">4.8</p>
+                <p class="label">Средняя оценка на Яндекс и 2GIS</p>
+            </div>
+            <div class="partners-stat">
+                <p class="number">80%</p>
+                <p class="label">клиентов обращаются снова</p>
+            </div>
+            <div class="partners-stat">
+                <p class="number">100+ </p>
+                <p class="label">довольных заказчиков</p>
+            </div>
+            <div class="partners-stat">
+                <p class="number">10+ </p>
+                <p class="label">регионов России</p>
+            </div>
+        </div>
+        <div class="reviews-slider swiper">
+            <div class="swiper-wrapper">
+                <div class="review swiper-slide">
+                    <div class="upper">
+                        <div class="stars">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                        </div>
+                        <p class="review-heading">Грамотная корректировка документации</p>
+                        <p class="review-text">После замечаний экспертизы компания оперативно внесла правки. Все сделано качественно, повторных вопросов не возникло. Спасибо</p>
+                    </div>
+                    <div class="lower">
+                        <p class="author-name">Смирнов Дмитрий</p>
+                        <p class="author-position">ТехноИнжениринг</p>
+                    </div>
+                </div>
+                <div class="review swiper-slide">
+                    <div class="upper">
+                        <div class="stars">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                        </div>
+                        <p class="review-heading">Профессиональный авторский надзор</p>
+                        <p class="review-text">Специалисты контролировали строительство, вовремя выявляли отклонения. Благодаря этому объект сдан без проблем. Отличная работа!</p>
+                    </div>
+                    <div class="lower">
+                        <p class="author-name">Кузнецова Елена</p>
+                        <p class="author-position">АрхСтройКонсалт</p>
+                    </div>
+                </div>
+                <div class="review swiper-slide">
+                    <div class="upper">
+                        <div class="stars">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                        </div>
+                        <p class="review-heading">Комплексное проектирование "под ключ"</p>
+                        <p class="review-text">От разработки до согласования – все этапы выполнены на высоком уровне. Команда надежная, сроки соблюдены. Буду обращаться снова!</p>
+                    </div>
+                    <div class="lower">
+                        <p class="author-name">Белов Артем</p>
+                        <p class="author-position">ПроектГарант</p>
+                    </div>
+                </div>
+                <div class="review swiper-slide">
+                    <div class="upper">
+                        <div class="stars">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                        </div>
+                        <p class="review-heading">Точный технический аудит</p>
+                        <p class="review-text">Компания помогла пройти госэкспертизу без задержек. Все корректировки вносились оперативно. Отличный сервис и компетентные специалисты!</p>
+                    </div>
+                    <div class="lower">
+                        <p class="author-name">Кузнецова Елена</p>
+                        <p class="author-position">АрхСтройКонсалт</p>
+                    </div>
+                </div>
+                <div class="review swiper-slide">
+                    <div class="upper">
+                        <div class="stars">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                        </div>
+                        <p class="review-heading">Качественное проектирование конструкций</p>
+                        <p class="review-text">Обратились в компанию за проектированием каркаса здания. Работа выполнена профессионально, учтены все нюансы. Документация оформлена четко, без замечаний от экспертизы. Рекомендую!</p>
+                    </div>
+                    <div class="lower">
+                        <p class="author-name">Иванов Алексей</p>
+                        <p class="author-position">СтройТехПроект</p>
+                    </div>
+                </div>
+                <div class="review swiper-slide">
+                    <div class="upper">
+                        <div class="stars">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                        </div>
+                        <p class="review-heading">Качественное проектирование конструкций</p>
+                        <p class="review-text">Обратились в компанию за проектированием каркаса здания. Работа выполнена профессионально, учтены все нюансы. Документация оформлена четко, без замечаний от экспертизы. Рекомендую!</p>
+                    </div>
+                    <div class="lower">
+                        <p class="author-name">Иванов Алексей</p>
+                        <p class="author-position">СтройТехПроект</p>
+                    </div>
+                </div>
+                <div class="review swiper-slide">
+                    <div class="upper">
+                        <div class="stars">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                            <img src="{% static 'images/star.svg' %}" alt="">
+                        </div>
+                        <p class="review-heading">Качественное проектирование конструкций</p>
+                        <p class="review-text">Обратились в компанию за проектированием каркаса здания. Работа выполнена профессионально, учтены все нюансы. Документация оформлена четко, без замечаний от экспертизы. Рекомендую!</p>
+                    </div>
+                    <div class="lower">
+                        <p class="author-name">Иванов Алексей</p>
+                        <p class="author-position">СтройТехПроект</p>
+                    </div>
+                </div>
+            </div>
+            <div class="partners-slider swiper">
+                <div class="swiper-wrapper">
+                    <div class="partner swiper-slide">
+                        <img src="{% static 'images/partner-logo-example.svg' %}" alt="">
+                    </div>
+                    <div class="partner swiper-slide">
+                        <img src="{% static 'images/partner-logo-example-2.svg' %}" alt="">
+                    </div>
+                    <div class="partner swiper-slide">
+                        <img src="{% static 'images/partner-logo-example-3.svg' %}" alt="">
+                    </div>
+                    <div class="partner swiper-slide">
+                        <img src="{% static 'images/partner-logo-example.svg' %}" alt="">
+                    </div>
+                    <div class="partner swiper-slide">
+                        <img src="{% static 'images/partner-logo-example-2.svg' %}" alt="">
+                    </div>
+                    <div class="partner swiper-slide">
+                        <img src="{% static 'images/partner-logo-example-3.svg' %}" alt="">
+                    </div>
+                    <div class="partner swiper-slide">
+                        <img src="{% static 'images/partner-logo-example.svg' %}" alt="">
+                    </div>
+                    <div class="partner swiper-slide">
+                        <img src="{% static 'images/partner-logo-example-2.svg' %}" alt="">
+                    </div>
+                    <div class="partner swiper-slide">
+                        <img src="{% static 'images/partner-logo-example-3.svg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="gallery-section container">
+    <p class="section-heading">Галерея работ</p>
+    <div class="gallery-body">
+        <div class="filter-panel">
+            <button class="active">Все направления</button>
+            <button>Проектирование</button>
+            <button>Конструкторская документация</button>
+            <button>Обследование зданий</button>
+        </div>
+        <div class="gallery-slider swiper">
+            <div class="swiper-wrapper">
+                <div class="gallery-photo swiper-slide">
+                    <img src="{% static 'images/gallery-photo-1.png' %}" alt="">
+                    <div class="badge">апрель 2025</div>
+                    <p class="gallery-heading">Профессиональный авторский надзор</p>
+                    <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+                </div>
+                <div class="gallery-photo swiper-slide">
+                    <img src="{% static 'images/gallery-photo-2.png' %}" alt="">
+                    <div class="badge">октябрь 2025</div>
+                    <p class="gallery-heading">Обследование зданий</p>
+                    <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+                </div>
+                <div class="gallery-photo swiper-slide">
+                    <img src="{% static 'images/gallery-photo-1.png' %}" alt="">
+                    <div class="badge">апрель 2025</div>
+                    <p class="gallery-heading">Профессиональный авторский надзор</p>
+                    <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+                </div>
+                <div class="gallery-photo swiper-slide">
+                    <img src="{% static 'images/gallery-photo-2.png' %}" alt="">
+                    <div class="badge">апрель 2025</div>
+                    <p class="gallery-heading">Профессиональный авторский надзор</p>
+                    <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+                </div>
+                <div class="gallery-photo swiper-slide">
+                    <img src="{% static 'images/gallery-photo-1.png' %}" alt="">
+                    <div class="badge">апрель 2025</div>
+                    <p class="gallery-heading">Профессиональный авторский надзор</p>
+                    <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+                </div>
+                <div class="gallery-photo swiper-slide">
+                    <img src="{% static 'images/gallery-photo-2.png' %}" alt="">
+                    <div class="badge">апрель 2025</div>
+                    <p class="gallery-heading">Профессиональный авторский надзор</p>
+                    <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="map-section">
+    <div id="map"></div>
+    <div class="map-section-content-container container">
+        <div class="map-section-content">
+            <div class="left-column">
+                <p class="header">Контакты</p>
+                <div class="body">
+                    <div class="address">
+                        <p class="label">Адрес</p>
+                        <div class="value-container">
+                            <p class="value">690065, Приморский край, г. Владивосток, ул. Пушкина 91</p>
+                            <small>пн-пт 08:30–17:30</small>
+                        </div>
+                    </div>
+                    <div class="phone">
+                        <p class="label">Телефон</p>
+                        <a target="_blank" class="value" href="">+7 (984) 195-00-55</a>
+                    </div>
+                    <a class="email" href="">info@ceh4.net</a>
+                    <div class="social-links">
+                        <img src="{% static 'images/telegram.svg' %}" alt="">
+                        <img src="{% static 'images/whatsapp.svg' %}" alt="">
+                        <img src="{% static 'images/vk.svg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <form class="right-column">
+                <p class="form-heading">Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей</p>
+                <div class="inputs-panel">
+                    <input type="text" placeholder="Имя">
+                    <input type="text" name="" id="" placeholder="Телефон">
+                </div>
+                <textarea name="" id="" placeholder="Сообщение"></textarea>
+                <div class="form__checkbox">
+                    <div class=form__checkbox-wrap>
+                        <input checked type=checkbox id=questionsCheckbox name=consent required>
+                    </div>
+                    <div>
+                        <label for=questionsCheckbox class=form__checkbox-label>
+                            С <span class="color-red">правилами политики конфиденциальности</span> ознакомлен
+                        </label>
+                    </div>
+                </div>
+                <button class="red-button">Связаться с нами</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block script %}
+<!-- Отзывы -->
+<script defer>
+const swiper = new Swiper('.reviews-slider.swiper', {
+    spaceBetween: 24,
+    spaceBetween: 24,
+    loop: true,
+    centeredSlides: true,
+    initialSlide: 1,
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3.6,
+      }
+    }
+  });
+</script>
+
+<!-- Партнёры -->
+<script defer>
+    const partnesSwiper = new Swiper('.partners-slider.swiper', {
+        spaceBetween: 24,
+        spaceBetween: 24,
+        loop: true,
+        centeredSlides: true,
+        initialSlide: 0,
+    
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 5.5,
+          }
+        }
+      });
+
+      console.log(partnesSwiper)
+    </script>
+
+<!-- Галерея -->
+<script defer>
+    const gallerySwiper = new Swiper('.gallery-slider.swiper', {
+        spaceBetween: 24,
+        initialSlide: 0,
+    
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          }
+        }
+      });
+
+      console.log(partnesSwiper)
+</script>
+
+<!-- Карта -->
+<script defer>
+    var myMap;
+
+    ymaps.ready((function() {
+    myMap = new ymaps.Map("map", {
+        center: [43.115542, 131.885494],
+        zoom: 13,
+        controls: []
+    });
+    var o = new ymaps.control.ZoomControl({
+        options: {
+            position: {
+                right: 10,
+                top: 50
+            },
+            size: "small"
+        }
+    });
+    myMap.controls.add(o), myMap.behaviors.disable("scrollZoom");
+    var a = new ymaps.Placemark([43.157062, 131.926061], {
+        hintContent: "Волгоградская улица, 7А",
+        balloonContent: "Волгоградская улица, 7А"
+    }, {
+        iconLayout: "default#image",
+        iconImageHref: "/static/images/pin.svg",
+        iconImageSize: [30, 42],
+        iconImageOffset: [-15, -42]
+    });
+    myMap.geoObjects.add(a)
+}));
+</script>
+{% endblock %}
