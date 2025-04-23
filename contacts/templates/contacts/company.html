@@ -1,0 +1,85 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block title %}Услуги{% endblock title %}
+
+{% block content %}
+<img class="main-bg" src="{% static 'images/main-bg.png' %}" alt="">
+
+<section class="company-page container">
+    <div class="header">
+        <div class="breadcrumbs">
+            <a>Главная</a>
+            <a>О компании</a>
+        </div>
+        <h1 class="page-heading">О компании</h1>
+    </div>
+
+    <div class="company-main-block">
+        <p>Мы — команда профессионалов, объединённых одной целью: создавать надёжные, эффективные и безопасные решения в сфере проектирования и строительного инжиниринга. Уже много лет мы работаем на рынке, сочетая техническую экспертизу с индивидуальным подходом к каждому проекту.</p>
+        <small>В нашей команде — опытные инженеры, проектировщики, эксперты, архитекторы и специалисты по согласованию документации. Мы ценим каждого сотрудника и постоянно инвестируем в повышение квалификации и развитие профессиональных компетенций.</small>
+    </div>
+
+    <div class="advantages-stats">
+        <div class="label">
+            Наши преимущества
+        </div>
+        <div class="advantages-stats-container">
+            <div class="advantages-stat">
+                <p class="heading">150+</p>
+                <p class="label">завершенных проектов</p>
+            </div>
+            <div class="advantages-stat">
+                <p class="heading">500 тыс+ </p>
+                <p class="label">м² площадь спроектированных объектов</p>
+            </div>
+            <div class="advantages-stat">
+                <p class="heading">до 100%</p>
+                <p class="label">проектов, выполненных с BIM-моделированием </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="command-section container">
+    <p class="section-heading">Команда</p>
+    <div class="command-members">
+        <div class="command-card">
+            <img src="{% static 'images/command-card-1.png' %}" alt="">
+            <div class="command-card-info">
+                <p>Андрей Смирнов</p>
+                <small>Главный инженер-проектировщик</small>
+            </div>
+        </div>
+        <div class="command-card">
+            <img src="{% static 'images/command-card-2.png' %}" alt="">
+            <div class="command-card-info">
+                <p>Екатерина Литвинова</p>
+                <small>Руководитель отдела обследований</small>
+            </div>
+        </div>
+        <div class="command-card">
+            <img src="{% static 'images/command-card-3.png' %}" alt="">
+            <div class="command-card-info">
+                <p>Максим Гончаров </p>
+                <small>Специалист по авторскому надзору</small>
+            </div>
+        </div>
+        <div class="command-card">
+            <img src="{% static 'images/command-card-4.png' %}" alt="">
+            <div class="command-card-info">
+                <p>Ирина Васильева </p>
+                <small>Ведущий архитектор-конструктор</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'home/includes/partners_section.html' %}
+
+{% include 'home/includes/contact_section.html' %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

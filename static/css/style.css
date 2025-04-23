@@ -525,6 +525,10 @@ body,
     flex-direction: column;
     gap: 16px;
 }
+.command-section, 
+.advantages-stats {
+    padding-top: 110px;
+}
 .advantages-stats .label {
     font-size: 19.2px;
     line-height: 23px;
@@ -551,12 +555,14 @@ body,
     color: var(--color-darkened-white);
     line-height: 23px;
 }
-.services-section {
-    padding-top: 224px;
-    padding-bottom: 150px;
+section {
     display: flex;
     flex-direction: column;
     gap: 42px;
+}
+.services-section {
+    padding-top: 224px;
+    padding-bottom: 150px;
 }
 .services-header {
     display: flex;
@@ -604,7 +610,8 @@ body,
     transform: scale(1.38);
 }
 .survey::after,
-.expertise::after {
+.expertise::after, 
+.command-card::after {
     content: "";
     position: absolute;
     left: 0;
@@ -620,6 +627,7 @@ body,
     z-index: 1;
 }
 
+.command-card::after,
 .survey::after {
     background: linear-gradient(
         to top, 
@@ -1292,10 +1300,13 @@ body,
         background-color: #F2F2F2;
     }
 }
+.company-page,
 .services-page {
     display: flex;
     flex-direction: column;
     gap: 42px;
+}
+.services-page {
     padding-bottom: 116px;
 }
 .services-page .header {
@@ -1403,4 +1414,68 @@ body,
     padding: 11px 14px;
     background-color: rgb(255, 255, 255, 0.05);
     border-radius: 100px;
+}
+.breadcrumbs a:last-child {
+    color: #999999;
+    pointer-events: none;
+}
+.company-main-block {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+.company-main-block p {
+    font-size: 54px;
+    line-height: 58px;
+}
+.company-main-block small {
+    font-size: 20px;
+    line-height: 28px;
+    color: #DDDDDD;
+}
+.command-section {
+    display: flex;
+    flex-direction: column;
+}
+.command-members {
+    display: flex;
+    gap: 24px;
+}
+.command-card {
+    overflow: hidden;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 32px;
+    position: relative;
+    height: 430px;
+    width: calc((100% - 24px * 3) / 4);
+}
+.command-card img {
+    object-fit: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.command-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 2;
+}
+.command-card-info p {
+    font-size: 36px;
+    line-height: 38px;
+    font-weight: 500;
+}
+.command-card-info small {
+    font-size: 20px;
+}
+.command-section + .partners-section {
+    padding-top: 110px;
+    padding-bottom: 86px;
 }
