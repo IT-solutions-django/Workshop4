@@ -10,3 +10,13 @@ class BlogView(View):
 
         }
         return render(request, self.template_name, context)
+    
+
+class ArticleView(View): 
+    template_name = 'blog/article.html' 
+
+    def get(self, request): 
+        context = {
+
+        }
+        return render(request, self.template_name, context)
