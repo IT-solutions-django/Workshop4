@@ -7,7 +7,7 @@ class HomeView(View):
 
     def get(self, request): 
         context = {
-
+            'is_home_page': True,
         }
         return render(request, self.template_name, context) 
     
