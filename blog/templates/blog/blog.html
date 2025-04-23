@@ -1,0 +1,102 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block title %}Блог{% endblock title %}
+
+{% block content %}
+<img class="main-bg" src="{% static 'images/main-bg.png' %}" alt="">
+
+<section class="blog-page container">
+    <div class="header">
+        <div class="breadcrumbs">
+            <a>Главная</a>
+            <a>Блог</a>
+        </div>
+        <h1 class="page-heading">Блог</h1>
+    </div>
+
+    <div class="blog-body">
+        <div class="filter-panel">
+            <button class="active">Все направления</button>
+            <button>Проектирование</button>
+            <button>Конструкторская документация</button>
+            <button>Обследование зданий</button>
+        </div>
+        <div class="article-cards">
+            <!-- 1 -->
+            <div class="article-card big">
+                <img src="{% static 'images/gallery-photo-1.png' %}" alt="">
+                <div class="badge">апрель 2025</div>
+                <p class="article-heading">Профессиональный авторский надзор</p>
+                <p class="article-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+            </div>
+            <div class="article-card">
+                <img src="{% static 'images/article-card-2.png' %}" alt="">
+                <div class="badge">апрель 2025</div>
+                <p class="article-heading">Профессиональный авторский надзор</p>
+                <p class="article-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+            </div>
+            <div class="article-card">
+                <img src="{% static 'images/article-card-3.png' %}" alt="">
+                <div class="badge">апрель 2025</div>
+                <p class="article-heading">Профессиональный авторский надзор</p>
+                <p class="article-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="article-card">
+                <img src="{% static 'images/article-card-4.png' %}" alt="">
+                <div class="badge">апрель 2025</div>
+                <p class="article-heading">Профессиональный авторский надзор</p>
+                <p class="article-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+            </div>
+            <div class="article-card">
+                <img src="{% static 'images/article-card-5.png' %}" alt="">
+                <div class="badge">ноябрь 2025</div>
+                <p class="article-heading">Обследование зданий</p>
+                <p class="article-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+            </div>
+            <div class="article-card big">
+                <img src="{% static 'images/article-card-6.png' %}" alt="">
+                <div class="badge">апрель 2025</div>
+                <p class="article-heading">Профессиональный авторский надзор</p>
+                <p class="article-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="article-card">
+                <img src="{% static 'images/article-card-7.png' %}" alt="">
+                <div class="badge">апрель 2025</div>
+                <p class="article-heading">Профессиональный авторский надзор</p>
+                <p class="article-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+            </div>
+            <div class="article-card big">
+                <img src="{% static 'images/article-card-8.png' %}" alt="">
+                <div class="badge">апрель 2025</div>
+                <p class="article-heading">Профессиональный авторский надзор</p>
+                <p class="article-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+            </div>
+            <div class="article-card">
+                <img src="{% static 'images/article-card-9.png' %}" alt="">
+                <div class="badge">апрель 2025</div>
+                <p class="article-heading">Профессиональный авторский надзор</p>
+                <p class="article-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-pagination">
+        <a href="" class="blog-pagination-link active">1</a>
+        <a href="" class="blog-pagination-link">2</a>
+        <a href="" class="blog-pagination-link">3</a>
+        <a href="" class="blog-pagination-link">...</a>
+        <a href="" class="blog-pagination-link">8</a>
+    </div>
+</section>
+
+{% include 'home/includes/contact_section.html' %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}
