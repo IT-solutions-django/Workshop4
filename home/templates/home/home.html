@@ -1,6 +1,8 @@
 {% extends 'base.html' %} 
 {% load static %} 
 
+{% block title %}Цех №4{% endblock title %}
+
 {% block content %}
 <img class="main-bg" src="{% static 'images/main-bg.png' %}" alt="">
 
@@ -113,236 +115,9 @@
     </div>
 </section>
 
-<section class="contact-section">
-    <img class="background" src="{% static 'images/contact-bg.png' %}" alt="">
-    <div class="container">
-        <div class="left-column">
-            <div class="contact-section-header">
-                <p class="section-heading">Свяжитесь с нами</p>
-                <small>Разработаем оптимальное решение для ваших задач. Вы получите</small>
-            </div>
-            <div class="stage-cards">
-                <div class="stage-card">
-                    <div class="stage-card-header">
-                        <p class="stage-card-number">01</p>
-                        <p class="stage-card-heading">Технико-коммерческое предложение </p>
-                    </div>
-                    <button class="gray-button">Подробнее</button>
-                </div>
-                <div class="stage-card">
-                    <div class="stage-card-header">
-                        <p class="stage-card-number">02</p>
-                        <p class="stage-card-heading">Четкий план работ <br>от обследования до сдачи </p>
-                    </div>
-                    <button class="gray-button">Скачать пример</button>
-                </div>
-                <div class="stage-card">
-                    <div class="stage-card-header">
-                        <p class="stage-card-number">03</p>
-                        <p class="stage-card-heading">Перечень необходимых <br>исходных данных </p>
-                    </div>
-                    <button class="gray-button">Получить перечень</button>
-                </div>
-            </div>
-        </div>
-        <div class="right-column">
-            <form>
-                <div class="label">
-                    Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей
-                </div>
-                <div class="two-columns">
-                    <input placeholder="Имя" type="text">
-                    <input placeholder="Телефон"  type="text" name="" id="">
-                </div>
-                <textarea placeholder="Сообщение"  name="" id=""></textarea>
-                <div class="button-container">
-                    <button class="red-button">Связаться с нами</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
+{% include 'home/includes/contact_section.html' %}
 
-<section class="partners-section container">
-    <img class="partners-background" src="{% static 'images/partners-background.png' %}" alt="">
-    <img class="partners-bg-lines" src="{% static 'images/partners-bg-lines.png' %}" alt="">
-    <h2 class="section-heading">Нам доверяют</h2>
-    <div class="partners-body">
-        <div class="partners-stats partners-container">
-            <div class="partners-stat">
-                <p class="number">4.8</p>
-                <p class="label">Средняя оценка на Яндекс и 2GIS</p>
-            </div>
-            <div class="partners-stat">
-                <p class="number">80%</p>
-                <p class="label">клиентов обращаются снова</p>
-            </div>
-            <div class="partners-stat">
-                <p class="number">100+ </p>
-                <p class="label">довольных заказчиков</p>
-            </div>
-            <div class="partners-stat">
-                <p class="number">10+ </p>
-                <p class="label">регионов России</p>
-            </div>
-        </div>
-        <div class="reviews-slider swiper">
-            <div class="swiper-wrapper">
-                <div class="review swiper-slide">
-                    <div class="upper">
-                        <div class="stars">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                        </div>
-                        <p class="review-heading">Грамотная корректировка документации</p>
-                        <p class="review-text">После замечаний экспертизы компания оперативно внесла правки. Все сделано качественно, повторных вопросов не возникло. Спасибо</p>
-                    </div>
-                    <div class="lower">
-                        <p class="author-name">Смирнов Дмитрий</p>
-                        <p class="author-position">ТехноИнжениринг</p>
-                    </div>
-                </div>
-                <div class="review swiper-slide">
-                    <div class="upper">
-                        <div class="stars">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                        </div>
-                        <p class="review-heading">Профессиональный авторский надзор</p>
-                        <p class="review-text">Специалисты контролировали строительство, вовремя выявляли отклонения. Благодаря этому объект сдан без проблем. Отличная работа!</p>
-                    </div>
-                    <div class="lower">
-                        <p class="author-name">Кузнецова Елена</p>
-                        <p class="author-position">АрхСтройКонсалт</p>
-                    </div>
-                </div>
-                <div class="review swiper-slide">
-                    <div class="upper">
-                        <div class="stars">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                        </div>
-                        <p class="review-heading">Комплексное проектирование "под ключ"</p>
-                        <p class="review-text">От разработки до согласования – все этапы выполнены на высоком уровне. Команда надежная, сроки соблюдены. Буду обращаться снова!</p>
-                    </div>
-                    <div class="lower">
-                        <p class="author-name">Белов Артем</p>
-                        <p class="author-position">ПроектГарант</p>
-                    </div>
-                </div>
-                <div class="review swiper-slide">
-                    <div class="upper">
-                        <div class="stars">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                        </div>
-                        <p class="review-heading">Точный технический аудит</p>
-                        <p class="review-text">Компания помогла пройти госэкспертизу без задержек. Все корректировки вносились оперативно. Отличный сервис и компетентные специалисты!</p>
-                    </div>
-                    <div class="lower">
-                        <p class="author-name">Кузнецова Елена</p>
-                        <p class="author-position">АрхСтройКонсалт</p>
-                    </div>
-                </div>
-                <div class="review swiper-slide">
-                    <div class="upper">
-                        <div class="stars">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                        </div>
-                        <p class="review-heading">Качественное проектирование конструкций</p>
-                        <p class="review-text">Обратились в компанию за проектированием каркаса здания. Работа выполнена профессионально, учтены все нюансы. Документация оформлена четко, без замечаний от экспертизы. Рекомендую!</p>
-                    </div>
-                    <div class="lower">
-                        <p class="author-name">Иванов Алексей</p>
-                        <p class="author-position">СтройТехПроект</p>
-                    </div>
-                </div>
-                <div class="review swiper-slide">
-                    <div class="upper">
-                        <div class="stars">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                        </div>
-                        <p class="review-heading">Качественное проектирование конструкций</p>
-                        <p class="review-text">Обратились в компанию за проектированием каркаса здания. Работа выполнена профессионально, учтены все нюансы. Документация оформлена четко, без замечаний от экспертизы. Рекомендую!</p>
-                    </div>
-                    <div class="lower">
-                        <p class="author-name">Иванов Алексей</p>
-                        <p class="author-position">СтройТехПроект</p>
-                    </div>
-                </div>
-                <div class="review swiper-slide">
-                    <div class="upper">
-                        <div class="stars">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                            <img src="{% static 'images/star.svg' %}" alt="">
-                        </div>
-                        <p class="review-heading">Качественное проектирование конструкций</p>
-                        <p class="review-text">Обратились в компанию за проектированием каркаса здания. Работа выполнена профессионально, учтены все нюансы. Документация оформлена четко, без замечаний от экспертизы. Рекомендую!</p>
-                    </div>
-                    <div class="lower">
-                        <p class="author-name">Иванов Алексей</p>
-                        <p class="author-position">СтройТехПроект</p>
-                    </div>
-                </div>
-            </div>
-            <div class="partners-slider swiper">
-                <div class="swiper-wrapper">
-                    <div class="partner swiper-slide">
-                        <img src="{% static 'images/partner-logo-example.svg' %}" alt="">
-                    </div>
-                    <div class="partner swiper-slide">
-                        <img src="{% static 'images/partner-logo-example-2.svg' %}" alt="">
-                    </div>
-                    <div class="partner swiper-slide">
-                        <img src="{% static 'images/partner-logo-example-3.svg' %}" alt="">
-                    </div>
-                    <div class="partner swiper-slide">
-                        <img src="{% static 'images/partner-logo-example.svg' %}" alt="">
-                    </div>
-                    <div class="partner swiper-slide">
-                        <img src="{% static 'images/partner-logo-example-2.svg' %}" alt="">
-                    </div>
-                    <div class="partner swiper-slide">
-                        <img src="{% static 'images/partner-logo-example-3.svg' %}" alt="">
-                    </div>
-                    <div class="partner swiper-slide">
-                        <img src="{% static 'images/partner-logo-example.svg' %}" alt="">
-                    </div>
-                    <div class="partner swiper-slide">
-                        <img src="{% static 'images/partner-logo-example-2.svg' %}" alt="">
-                    </div>
-                    <div class="partner swiper-slide">
-                        <img src="{% static 'images/partner-logo-example-3.svg' %}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+{% include 'home/includes/partners_section.html' %}
 
 <section class="gallery-section container">
     <p class="section-heading">Галерея работ</p>
@@ -426,7 +201,7 @@
                 <p class="form-heading">Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей</p>
                 <div class="inputs-panel">
                     <input type="text" placeholder="Имя">
-                    <input type="text" name="" id="" placeholder="Телефон">
+                    <input type="tel" name="" id="" placeholder="Телефон">
                 </div>
                 <textarea name="" id="" placeholder="Сообщение"></textarea>
                 <div class="form__checkbox">
@@ -448,63 +223,6 @@
 {% endblock %}
 
 {% block script %}
-<!-- Отзывы -->
-<script defer>
-const swiper = new Swiper('.reviews-slider.swiper', {
-    spaceBetween: 24,
-    spaceBetween: 24,
-    loop: true,
-    centeredSlides: true,
-    initialSlide: 1,
-
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3.6,
-      }
-    }
-  });
-</script>
-
-<!-- Партнёры -->
-<script defer>
-    const partnesSwiper = new Swiper('.partners-slider.swiper', {
-        spaceBetween: 24,
-        spaceBetween: 24,
-        loop: true,
-        centeredSlides: true,
-        initialSlide: 0,
-    
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 5.5,
-          }
-        }
-      });
-
-      console.log(partnesSwiper)
-    </script>
 
 <!-- Галерея -->
 <script defer>

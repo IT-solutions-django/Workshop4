@@ -99,21 +99,26 @@
                 Меню
             </div>
             <div class="header__left-part">
-                <!-- <div class="header__logo">
-                    <a href="{% url 'home:home' %}" class="header__logo-link">
-                        <img src="{% static 'images/logo.svg' %}" alt="Логотип">
-                    </a>
-                </div> -->
+                {% if not is_home_page %}
+                    <div class="header__logo">
+                        <a href="{% url 'home:home' %}" class="header__logo-link">
+                            <img src="{% static 'images/logo.svg' %}" alt="Логотип">
+                        </a>
+                    </div>
+                {% endif %}
                 <div class="header__nav">
                     <div class="header__menu">
                         <div class="header__menu-link">
-                            <a class="red-hover" href="">Главная</a>
+                            <a class="red-hover" href="{% url 'home:home' %}">Главная</a>
                         </div>
                         <div class="header__menu-link">
-                            <a class="red-hover" href="">Услуги</a>
+                            <a class="red-hover" href="{% url 'services:services' %}">Услуги</a>
                         </div>
                         <div class="header__menu-link">
-                            <a class="red-hover" href="">О компании</a>
+                            <a class="red-hover" href="{% url 'contacts:about_company' %}">О компании</a>
+                        </div>
+                        <div class="header__menu-link">
+                            <a class="red-hover" href="{% url 'blog:blog' %}">Блог</a>
                         </div>
                         <div class="header__menu-link">
                             <a class="red-hover" href="">Контакты</a>
@@ -151,15 +156,15 @@
                 <div class="right-column">
                     <div class="upper">
                         <div class="links-list">
-                            <a href="">Главная</a>
-                            <a href="">Услуги</a>
-                            <a href="">О компании</a>
-                            <a href="">Контакты</a>
+                            <a class="hover-white" href="">Главная</a>
+                            <a class="hover-white" href="">Услуги</a>
+                            <a class="hover-white" href="">О компании</a>
+                            <a class="hover-white" href="">Контакты</a>
                         </div>
                         <div class="links-list">
-                            <a href="">Whatsapp</a>
-                            <a href="">Вконтакте</a>
-                            <a href="">Телеграм</a>
+                            <a class="hover-white" href="">Whatsapp</a>
+                            <a class="hover-white" href="">Вконтакте</a>
+                            <a class="hover-white" href="">Телеграм</a>
                         </div>
                     </div>
                     <div class="lower">
@@ -282,6 +287,20 @@
             }
         });
     });
+</script>
+
+<!-- Маска для телефонов -->
+<script defer>
+    document.querySelectorAll('input[type="tel"]').forEach(input => {
+            let phoneMask = IMask(input, { mask: "+{7} (000) 000-00-00" });
+
+            function validatePhoneNumber() {
+                let t = input.value.replace(/\D/g, "");
+                return t.length < 11 ? (input.setCustomValidity("Необходимо минимум 11 цифр"), !1) : (input.setCustomValidity(""), !0);
+            }
+
+            input.addEventListener("input", validatePhoneNumber);
+        });
 </script>
 
 </html>

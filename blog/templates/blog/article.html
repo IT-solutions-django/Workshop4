@@ -1,0 +1,52 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block title %}Блог{% endblock title %}
+
+{% block content %}
+<img class="main-bg" src="{% static 'images/main-bg.png' %}" alt="">
+
+<section class="article-page container">
+    <div class="header">
+        <div class="breadcrumbs">
+            <a>Главная</a>
+            <a>Блог</a>
+            <a href="">Профессиональный авторский надзор</a>
+        </div>
+        <h1 class="page-heading">Профессиональный авторский надзор</h1>
+    </div>
+
+    <div class="article-body">
+        <div class="article-header">
+            <img src="{% static 'images/article-photo.png' %}" alt="">
+            <div class="article-header-wrapper">
+                <div class="article-page-badge">апрель 2025</div>
+                <div class="article-page-heading">Профессиональный <br> авторский надзор</div>
+                <div class="article-page-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</div>
+            </div>
+        </div>
+        <div class="article-content">
+            <div class="article-content-text">
+                Авторский надзор — это не просто проверка соответствия стройки чертежам. Это активное участие проектировщика в реализации задуманного, когда каждая деталь контролируется с профессиональной точностью. <br>
+                Мы сопровождаем проекты на всех этапах строительства, чтобы обеспечить точность исполнения, соблюдение проектных решений и предотвращение возможных отклонений. Благодаря авторскому надзору заказчик получает не просто здание — он получает реализацию своей идеи в точном соответствии с проектом.
+                <br><br>
+                Почему это важно?<br> 
+                – Исключение строительных ошибок<br> 
+                – Своевременная корректировка проектных решений<br> 
+                – Экономия времени и бюджета на переделки <br>
+                Профессиональный авторский надзор — это гарантия того, что проект будет реализован именно так, как задумывался.
+            </div>
+            <button class="article-share-button">
+                <img src="{% static 'images/share.svg' %}" alt="">
+                <p>Поделиться</p>
+            </button>
+        </div>
+    </div>
+</section>
+
+{% include 'home/includes/contact_section.html' %}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

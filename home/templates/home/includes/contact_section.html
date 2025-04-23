@@ -1,0 +1,51 @@
+{% load static %}
+
+<section class="contact-section">
+    <img class="background" src="{% static 'images/contact-bg.png' %}" alt="">
+    <div class="container">
+        <div class="left-column">
+            <div class="contact-section-header">
+                <p class="section-heading">Свяжитесь с нами</p>
+                <small>Разработаем оптимальное решение для ваших задач. Вы получите</small>
+            </div>
+            <div class="stage-cards">
+                <div class="stage-card">
+                    <div class="stage-card-header">
+                        <p class="stage-card-number">01</p>
+                        <p class="stage-card-heading">Технико-коммерческое предложение </p>
+                    </div>
+                    <button class="gray-button">Подробнее</button>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-card-header">
+                        <p class="stage-card-number">02</p>
+                        <p class="stage-card-heading">Четкий план работ <br>от обследования до сдачи </p>
+                    </div>
+                    <button class="gray-button">Скачать пример</button>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-card-header">
+                        <p class="stage-card-number">03</p>
+                        <p class="stage-card-heading">Перечень необходимых <br>исходных данных </p>
+                    </div>
+                    <button class="gray-button">Получить перечень</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <form>
+                <div class="label">
+                    Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей
+                </div>
+                <div class="two-columns">
+                    <input placeholder="Имя" type="text">
+                    <input placeholder="Телефон"  type="tel" name="" id="">
+                </div>
+                <textarea placeholder="Сообщение"  name="" id=""></textarea>
+                <div class="button-container">
+                    <button class="red-button">Связаться с нами</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
