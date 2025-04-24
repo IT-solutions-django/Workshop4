@@ -189,7 +189,14 @@
         loop: true,
         centeredSlides: true,
         initialSlide: 0,
-    
+
+        autoplay: {
+            delay: 1, 
+            disableOnInteraction: false,
+        },
+        slidesPerView: 'auto',
+        speed: 6000,
+        freeMode: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -207,8 +214,6 @@
           }
         }
       });
-
-      console.log(partnesSwiper)
 </script>
 
 <!-- Отзывы -->
@@ -219,7 +224,6 @@
         loop: true,
         centeredSlides: true,
         initialSlide: 1,
-    
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -237,4 +241,4 @@
           }
         }
       });
-    </script>
+</script>

@@ -6,6 +6,7 @@
 {% block content %}
 <img class="main-bg" src="{% static 'images/main-bg.png' %}" alt="">
 
+<!-- Блок-визитка -->
 <section class="welcome-section container">
     <div class="welcome-logo">
         <img src="{% static 'images/logo.svg' %}" alt="">
@@ -17,6 +18,7 @@
     </div>
 </section>
 
+<!-- Преимущества -->
 <section class="advantages-section container">
     <div class="advantages-header">
         <div class="advantages-subheader">
@@ -54,6 +56,7 @@
     </div>
 </section>
 
+<!-- Услуги -->
 <section class="services-section container">
     <div class="services-header">
         <h2 class="section-heading">Наши услуги</h2>
@@ -100,16 +103,34 @@
             </div>
         </div>
       
-        <div class="quote box">
-            <div class="quote-wrapper">
-                <p class="quote-text">"Наша компания объединяет опыт и инновации в области проектирования и разработки конструктивных решений. Мы создаем надёжные и эффективные проекты"</p>
-                <div class="quote-info">
-                  <img class="quote-author" src="{% static 'images/quote-author-example.png' %}" alt="Автор">
-                  <div class="quote-author-info">
-                    <p>Горбунов Игорь Андреевич</p>
-                    <small>Генеральный директор</small>
-                  </div>
+        <div class="quote box swiper">
+            <div class="swiper-wrapper">
+                <div class="quote-wrapper swiper-slide">
+                    <p class="quote-text">"Наша компания объединяет опыт и инновации в области проектирования и разработки конструктивных решений. Мы создаем надёжные и эффективные проекты"</p>
+                    <div class="quote-info">
+                      <img class="quote-author" src="{% static 'images/quote-author-example.png' %}" alt="Автор">
+                      <div class="quote-author-info">
+                        <p>Горбунов Игорь Андреевич</p>
+                        <small>Генеральный директор</small>
+                      </div>
+                    </div>
                 </div>
+                <div class="quote-wrapper swiper-slide">
+                    <p class="quote-text">"Наша компания объединяет опыт и инновации в области проектирования и разработки конструктивных решений. Мы создаем надёжные и эффективные проекты"</p>
+                    <div class="quote-info">
+                      <img class="quote-author" src="{% static 'images/quote-author-example.png' %}" alt="Автор">
+                      <div class="quote-author-info">
+                        <p>Горбунов Игорь Андреевич</p>
+                        <small>Генеральный директор</small>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-quotes-prev">
+                <img src="{% static 'images/left-arrow.svg' %}" alt="">
+            </div>
+            <div class="swiper-quotes-next">
+                <img src="{% static 'images/right-arrow.svg' %}" alt="">
             </div>
         </div>
     </div>
@@ -119,6 +140,7 @@
 
 {% include 'home/includes/partners_section.html' %}
 
+<!-- Галерея -->
 <section class="gallery-section container">
     <p class="section-heading">Галерея работ</p>
     <div class="gallery-body">
@@ -171,6 +193,7 @@
     </div>
 </section>
 
+<!-- Карта -->
 <section class="map-section">
     <div id="map"></div>
     <div class="map-section-content-container container">
@@ -247,8 +270,29 @@
           }
         }
       });
+</script>
 
-      console.log(partnesSwiper)
+<script defer>
+const quotesSwiper = new Swiper('.quote.swiper', {
+    spaceBetween: 1,
+    spaceBetween: 36,
+    navigation: {
+        nextEl: '.swiper-quotes-next',
+        prevEl: '.swiper-quotes-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        768: {
+        slidesPerView: 1,
+        },
+        1024: {
+        slidesPerView: 1,
+        }
+    }
+    });
 </script>
 
 <!-- Карта -->

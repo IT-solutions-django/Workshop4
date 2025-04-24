@@ -188,6 +188,7 @@ footer .left-column .address {
 }
 .footer-logo {
     width: 244px;
+    min-width: 244px;
 }
 
 .nav__dropdown-content-wrapper {
@@ -670,7 +671,7 @@ section {
     grid-column: span 2;
 }
 .quote-wrapper {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
@@ -767,6 +768,10 @@ section {
     font-size: 24px;
     line-height: 31.2px;
 }
+.quote-text, 
+.quote-info {
+    max-width: 722px;
+}
 .contact-section {
     background-color: #222222;
     padding-top: 87px;
@@ -858,6 +863,11 @@ section {
     background-color: rgb(255, 255, 255, 0.06);
     font-size: 14px;
     line-height: 16px;
+
+    transition: all 0.3s ease;
+}
+.stage-card button:hover {
+    background-color: rgb(255, 255, 255, 0.1);
 }
 .stage-cards {
     width: 100%;
@@ -995,6 +1005,9 @@ section {
 .gallery-slider.swiper {
     width: 100% !important;
 }
+.partners-slider .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
 .partners-slider.swiper {
     height: 180px;
 }
@@ -1114,6 +1127,14 @@ section {
 }
 .article-card {
     width: 416px;
+
+    transition: all 0.3s ease;
+}
+.article-card * {
+    transition: all 0.3s ease;
+}
+.article-card:hover img {
+    opacity: 0.85;
 }
 .article-card.big {
     width: calc((100% - 24px * 2 - 416px * 2));
@@ -1674,4 +1695,43 @@ section {
 }
 .map-section-content .red-button:hover {
     background-color: #0F0F0F;
+}
+
+/* 3D-анимация */
+.main-bg {
+    /* display: none; */
+}
+spline-viewer {
+    position: absolute;
+    right: -540px;
+    top: 200px;
+}
+
+
+.swiper-quotes-prev,
+.swiper-quotes-next {
+    width: 32px;
+    position: absolute;
+    height: 32px;
+    background: #DDDDDD;
+    right: 0;
+    bottom: 28px;
+    z-index: 3;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.swiper-quotes-prev:hover,
+.swiper-quotes-next:hover {
+    background-color: #ffffff;
+}
+.swiper-quotes-prev {
+    right: 84px;
+}
+.swiper-quotes-next {
+    right: 46px;
 }
