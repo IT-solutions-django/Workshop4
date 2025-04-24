@@ -44,34 +44,15 @@
 <section class="command-section container">
     <p class="section-heading">Команда</p>
     <div class="command-members">
-        <div class="command-card">
-            <img src="{% static 'images/command-card-1.png' %}" alt="">
-            <div class="command-card-info">
-                <p>Андрей Смирнов</p>
-                <small>Главный инженер-проектировщик</small>
+        {% for worker in workers %}
+            <div class="command-card">
+                <img src="{{ worker.photo.url }}" alt="">
+                <div class="command-card-info">
+                    <p>{{ worker.name }}</p>
+                    <small>{{ worker.position }}</small>
+                </div>
             </div>
-        </div>
-        <div class="command-card">
-            <img src="{% static 'images/command-card-2.png' %}" alt="">
-            <div class="command-card-info">
-                <p>Екатерина Литвинова</p>
-                <small>Руководитель отдела обследований</small>
-            </div>
-        </div>
-        <div class="command-card">
-            <img src="{% static 'images/command-card-3.png' %}" alt="">
-            <div class="command-card-info">
-                <p>Максим Гончаров </p>
-                <small>Специалист по авторскому надзору</small>
-            </div>
-        </div>
-        <div class="command-card">
-            <img src="{% static 'images/command-card-4.png' %}" alt="">
-            <div class="command-card-info">
-                <p>Ирина Васильева </p>
-                <small>Ведущий архитектор-конструктор</small>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
 

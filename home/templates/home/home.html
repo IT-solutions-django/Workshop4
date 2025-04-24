@@ -105,26 +105,18 @@
       
         <div class="quote box swiper">
             <div class="swiper-wrapper">
-                <div class="quote-wrapper swiper-slide">
-                    <p class="quote-text">"Наша компания объединяет опыт и инновации в области проектирования и разработки конструктивных решений. Мы создаем надёжные и эффективные проекты"</p>
-                    <div class="quote-info">
-                      <img class="quote-author" src="{% static 'images/quote-author-example.png' %}" alt="Автор">
-                      <div class="quote-author-info">
-                        <p>Горбунов Игорь Андреевич</p>
-                        <small>Генеральный директор</small>
-                      </div>
+                {% for quote in quotes %}
+                    <div class="quote-wrapper swiper-slide">
+                        <p class="quote-text">"{{ quote.text }}"</p>
+                        <div class="quote-info">
+                        <img class="quote-author" src="{{ quote.author_photo.url }}" alt="Автор">
+                        <div class="quote-author-info">
+                            <p>{{ quote.author_name }}</p>
+                            <small>{{ quote.author_position }}</small>
+                        </div>
+                        </div>
                     </div>
-                </div>
-                <div class="quote-wrapper swiper-slide">
-                    <p class="quote-text">"Наша компания объединяет опыт и инновации в области проектирования и разработки конструктивных решений. Мы создаем надёжные и эффективные проекты"</p>
-                    <div class="quote-info">
-                      <img class="quote-author" src="{% static 'images/quote-author-example.png' %}" alt="Автор">
-                      <div class="quote-author-info">
-                        <p>Горбунов Игорь Андреевич</p>
-                        <small>Генеральный директор</small>
-                      </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="swiper-quotes-prev">
                 <img src="{% static 'images/left-arrow.svg' %}" alt="">
@@ -152,42 +144,42 @@
         </div>
         <div class="gallery-slider swiper">
             <div class="swiper-wrapper">
-                <div class="gallery-photo swiper-slide">
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-1.png' %}" alt="">
                     <div class="badge">апрель 2025</div>
                     <p class="gallery-heading">Профессиональный авторский надзор</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
-                <div class="gallery-photo swiper-slide">
+                </a>
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-2.png' %}" alt="">
                     <div class="badge">октябрь 2025</div>
                     <p class="gallery-heading">Обследование зданий</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
-                <div class="gallery-photo swiper-slide">
+                </a>
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-1.png' %}" alt="">
                     <div class="badge">апрель 2025</div>
                     <p class="gallery-heading">Профессиональный авторский надзор</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
-                <div class="gallery-photo swiper-slide">
+                </a>
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-2.png' %}" alt="">
                     <div class="badge">апрель 2025</div>
                     <p class="gallery-heading">Профессиональный авторский надзор</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
-                <div class="gallery-photo swiper-slide">
+                </a>
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-1.png' %}" alt="">
                     <div class="badge">апрель 2025</div>
                     <p class="gallery-heading">Профессиональный авторский надзор</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
-                <div class="gallery-photo swiper-slide">
+                </a>
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-2.png' %}" alt="">
                     <div class="badge">апрель 2025</div>
                     <p class="gallery-heading">Профессиональный авторский надзор</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
+                </a>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,19 +104,19 @@
 
     <header class="header">
         <div class="header__row">
-            <div class="header__mobile-menu-heading">
-                Меню
-            </div>
             <div class="header__left-part">
                 {% if not is_home_page %}
-                    <div class="header__logo">
+                    <div class="header__logo only-desktop">
                         <a href="{% url 'home:home' %}" class="header__logo-link">
                             <img src="{% static 'images/logo.svg' %}" alt="Логотип">
                         </a>
                     </div>
                 {% endif %}
+                <a class="only-mobile header-mobile-logo">
+                    <img src="{% static 'images/logo.svg' %}" alt="">
+                </a>
                 <div class="header__nav">
-                    <div class="header__menu">
+                    <div class="header__menu only-desktop">
                         <div class="header__menu-link">
                             <a class="red-hover" href="{% url 'home:home' %}">Главная</a>
                         </div>
@@ -137,10 +137,13 @@
             </div>
             <div class="header__right-part">
                 <div class="header__right-part--phone">
-                    <a target="_blank" href="tel:{{ company_info.email }}">+7 (984) 195-00-55</a>
-                    <a class="label">Whatsapp</a>
+                    <a target="_blank" href="tel:{{ company_info.phone }}">{{ company_info.phone }}</a>
+                    <a target="_blank" class="label" href="{{ company_info.whatsapp_link }}">Whatsapp</a>
                 </div>
-                <button class="header__right-part--button">
+                <button class="only-mobile burger-button">
+                    <img src="{% static 'images/burger.svg' %}" alt="">
+                </button>
+                <button class="header__right-part--button only-desktop">
                     Связаться с нами
                 </button>
             </div>     
@@ -156,10 +159,10 @@
         <div class="container">
             <div class="content">
                 <div class="left-column">
-                    <p class="address">690065, Приморский край, г. Владивосток, <br>ул. Пушкина 91</p>
+                    <p class="address">{{ company_info.address }}</p>
                     <div class="footer-contacts">
-                        <a href="" class="phone">+7 (984) 195-00-55</a>
-                        <a href="" class="email">info@ceh4.net</a>
+                        <a target="_blank" href="tel:{{ company_info.phone }}" class="phone">{{ company_info.phone }}</a>
+                        <a target="_blank" href="mailto:{{ company_info.email }}" class="email">{{ company_info.email }}</a>
                     </div>
                 </div>
                 <div class="right-column">
@@ -172,9 +175,9 @@
                             <a class="hover-white" href="">Контакты</a>
                         </div>
                         <div class="links-list">
-                            <a class="hover-white" href="">Whatsapp</a>
-                            <a class="hover-white" href="">Вконтакте</a>
-                            <a class="hover-white" href="">Телеграм</a>
+                            <a target="_blank" class="hover-white" href="{{ company_info.whatsapp_link }}">Whatsapp</a>
+                            <a target="_blank" class="hover-white" href="{{ company_info.vk_link }}">Вконтакте</a>
+                            <a target="_blank" class="hover-white" href="{{ company_info.telegram_link }}">Телеграм</a>
                         </div>
                     </div>
                     <div class="lower">
