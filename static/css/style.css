@@ -1075,6 +1075,11 @@ section {
 
     transition: all 0.3s ease;
 }
+.services-section .tags .tag {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.services-section .tags .tag:hover,
 .filter-panel button:hover {
     background-color: rgb(255, 255, 255, 0.15);
 }
@@ -1730,11 +1735,13 @@ section {
 /* 3D-анимация */
 .main-bg {
     /* display: none; */
+    
 }
 spline-viewer {
     position: absolute;
     right: -540px;
     top: 200px;
+    z-index: -10;
 }
 
 

@@ -4,7 +4,16 @@
 {% block title %}Цех №4{% endblock title %}
 
 {% block content %}
-<img class="main-bg" src="{% static 'images/main-bg.png' %}" alt="">
+<img class="main-bg" src="{% static 'images/gray-lines-bg.svg' %}" alt="">
+
+<!-- 3D-анимация -->
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+<spline-viewer 
+    url="https://prod.spline.design/CbjMghYMPjn2LvAV/scene.splinecode"
+    interaction="true"  
+    auto-rotate="false"
+>
+</spline-viewer>
 
 <!-- Блок-визитка -->
 <section class="welcome-section container">
@@ -196,19 +205,25 @@
                     <div class="address">
                         <p class="label">Адрес</p>
                         <div class="value-container">
-                            <p class="value">690065, Приморский край, г. Владивосток, ул. Пушкина 91</p>
+                            <p class="value">{{ company_info.address }}</p>
                             <small>пн-пт 08:30–17:30</small>
                         </div>
                     </div>
                     <div class="phone">
                         <p class="label">Телефон</p>
-                        <a target="_blank" class="value" href="">+7 (984) 195-00-55</a>
+                        <a target="_blank" target="_blank" class="value" href="tel:{{ company_info.phone }}">{{ company_info.phone }}</a>
                     </div>
-                    <a class="email" href="">info@ceh4.net</a>
+                    <a target="_blank" class="email" href="mailto:{{ company_info.email }}">{{ company_info.email }}</a>
                     <div class="social-links">
-                        <img src="{% static 'images/telegram.svg' %}" alt="">
-                        <img src="{% static 'images/whatsapp.svg' %}" alt="">
-                        <img src="{% static 'images/vk.svg' %}" alt="">
+                        <a target="_blank" href="{{ company_info.telegram_link }}">
+                            <img src="{% static 'images/telegram.svg' %}" alt="">
+                        </a>
+                        <a target="_blank" href="{{ company_info.whatsapp_link }}">
+                            <img src="{% static 'images/whatsapp.svg' %}" alt="">
+                        </a>
+                        <a target="_blank" href="{{ company_info.vk_link }}">
+                            <img src="{% static 'images/vk.svg' %}" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
