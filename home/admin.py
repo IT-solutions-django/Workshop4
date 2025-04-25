@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import (
+    CompanyInfo,
+)
 
-# Register your models here.
+
+@admin.register(CompanyInfo)
+class CompanyInfoAdmin(admin.ModelAdmin): 
+    list_display = ['__str__']

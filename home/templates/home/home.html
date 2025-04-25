@@ -4,8 +4,18 @@
 {% block title %}Цех №4{% endblock title %}
 
 {% block content %}
-<img class="main-bg" src="{% static 'images/main-bg.png' %}" alt="">
+<img class="main-bg" src="{% static 'images/gray-lines-bg.svg' %}" alt="">
 
+<!-- 3D-анимация -->
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+<spline-viewer 
+    url="https://prod.spline.design/CbjMghYMPjn2LvAV/scene.splinecode"
+    interaction="true"  
+    auto-rotate="false"
+>
+</spline-viewer>
+
+<!-- Блок-визитка -->
 <section class="welcome-section container">
     <div class="welcome-logo">
         <img src="{% static 'images/logo.svg' %}" alt="">
@@ -17,6 +27,7 @@
     </div>
 </section>
 
+<!-- Преимущества -->
 <section class="advantages-section container">
     <div class="advantages-header">
         <div class="advantages-subheader">
@@ -54,6 +65,7 @@
     </div>
 </section>
 
+<!-- Услуги -->
 <section class="services-section container">
     <div class="services-header">
         <h2 class="section-heading">Наши услуги</h2>
@@ -100,16 +112,26 @@
             </div>
         </div>
       
-        <div class="quote box">
-            <div class="quote-wrapper">
-                <p class="quote-text">"Наша компания объединяет опыт и инновации в области проектирования и разработки конструктивных решений. Мы создаем надёжные и эффективные проекты"</p>
-                <div class="quote-info">
-                  <img class="quote-author" src="{% static 'images/quote-author-example.png' %}" alt="Автор">
-                  <div class="quote-author-info">
-                    <p>Горбунов Игорь Андреевич</p>
-                    <small>Генеральный директор</small>
-                  </div>
-                </div>
+        <div class="quote box swiper">
+            <div class="swiper-wrapper">
+                {% for quote in quotes %}
+                    <div class="quote-wrapper swiper-slide">
+                        <p class="quote-text">"{{ quote.text }}"</p>
+                        <div class="quote-info">
+                        <img class="quote-author" src="{{ quote.author_photo.url }}" alt="Автор">
+                        <div class="quote-author-info">
+                            <p>{{ quote.author_name }}</p>
+                            <small>{{ quote.author_position }}</small>
+                        </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-quotes-prev">
+                <img src="{% static 'images/left-arrow.svg' %}" alt="">
+            </div>
+            <div class="swiper-quotes-next">
+                <img src="{% static 'images/right-arrow.svg' %}" alt="">
             </div>
         </div>
     </div>
@@ -119,6 +141,7 @@
 
 {% include 'home/includes/partners_section.html' %}
 
+<!-- Галерея -->
 <section class="gallery-section container">
     <p class="section-heading">Галерея работ</p>
     <div class="gallery-body">
@@ -130,47 +153,48 @@
         </div>
         <div class="gallery-slider swiper">
             <div class="swiper-wrapper">
-                <div class="gallery-photo swiper-slide">
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-1.png' %}" alt="">
                     <div class="badge">апрель 2025</div>
                     <p class="gallery-heading">Профессиональный авторский надзор</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
-                <div class="gallery-photo swiper-slide">
+                </a>
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-2.png' %}" alt="">
                     <div class="badge">октябрь 2025</div>
                     <p class="gallery-heading">Обследование зданий</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
-                <div class="gallery-photo swiper-slide">
+                </a>
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-1.png' %}" alt="">
                     <div class="badge">апрель 2025</div>
                     <p class="gallery-heading">Профессиональный авторский надзор</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
-                <div class="gallery-photo swiper-slide">
+                </a>
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-2.png' %}" alt="">
                     <div class="badge">апрель 2025</div>
                     <p class="gallery-heading">Профессиональный авторский надзор</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
-                <div class="gallery-photo swiper-slide">
+                </a>
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-1.png' %}" alt="">
                     <div class="badge">апрель 2025</div>
                     <p class="gallery-heading">Профессиональный авторский надзор</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
-                <div class="gallery-photo swiper-slide">
+                </a>
+                <a href="{% url 'blog:article' %}" class="gallery-photo swiper-slide">
                     <img src="{% static 'images/gallery-photo-2.png' %}" alt="">
                     <div class="badge">апрель 2025</div>
                     <p class="gallery-heading">Профессиональный авторский надзор</p>
                     <p class="gallery-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</p>
-                </div>
+                </a>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Карта -->
 <section class="map-section">
     <div id="map"></div>
     <div class="map-section-content-container container">
@@ -181,19 +205,25 @@
                     <div class="address">
                         <p class="label">Адрес</p>
                         <div class="value-container">
-                            <p class="value">690065, Приморский край, г. Владивосток, ул. Пушкина 91</p>
+                            <p class="value">{{ company_info.address }}</p>
                             <small>пн-пт 08:30–17:30</small>
                         </div>
                     </div>
                     <div class="phone">
                         <p class="label">Телефон</p>
-                        <a target="_blank" class="value" href="">+7 (984) 195-00-55</a>
+                        <a target="_blank" target="_blank" class="value" href="tel:{{ company_info.phone }}">{{ company_info.phone }}</a>
                     </div>
-                    <a class="email" href="">info@ceh4.net</a>
+                    <a target="_blank" class="email" href="mailto:{{ company_info.email }}">{{ company_info.email }}</a>
                     <div class="social-links">
-                        <img src="{% static 'images/telegram.svg' %}" alt="">
-                        <img src="{% static 'images/whatsapp.svg' %}" alt="">
-                        <img src="{% static 'images/vk.svg' %}" alt="">
+                        <a target="_blank" href="{{ company_info.telegram_link }}">
+                            <img src="{% static 'images/telegram.svg' %}" alt="">
+                        </a>
+                        <a target="_blank" href="{{ company_info.whatsapp_link }}">
+                            <img src="{% static 'images/whatsapp.svg' %}" alt="">
+                        </a>
+                        <a target="_blank" href="{{ company_info.vk_link }}">
+                            <img src="{% static 'images/vk.svg' %}" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -247,8 +277,29 @@
           }
         }
       });
+</script>
 
-      console.log(partnesSwiper)
+<script defer>
+const quotesSwiper = new Swiper('.quote.swiper', {
+    spaceBetween: 1,
+    spaceBetween: 36,
+    navigation: {
+        nextEl: '.swiper-quotes-next',
+        prevEl: '.swiper-quotes-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        768: {
+        slidesPerView: 1,
+        },
+        1024: {
+        slidesPerView: 1,
+        }
+    }
+    });
 </script>
 
 <!-- Карта -->
