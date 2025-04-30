@@ -1102,6 +1102,7 @@ section {
     display: flex;
     gap: 12px;
 }
+.filter-panel a,
 .filter-panel button {
     border-radius: 100px;
     background-color: rgb(255, 255, 255, 0.05);
@@ -1113,11 +1114,12 @@ section {
 }
 .services-section .tags .tag {
     transition: all 0.3s ease;
-    cursor: pointer;
 }
+.filter-panel a:hover,
 .filter-panel button:hover {
     background-color: rgb(255, 255, 255, 0.15);
 }
+.filter-panel a.active,
 .filter-panel button.active {
     background-color: white;
     color: #222222;
@@ -1875,9 +1877,10 @@ spline-viewer {
     .header__right-part--phone a {
         font-size: 14px;
         line-height: 19px;
+        text-wrap: nowrap;
     }
     .header__row {
-        gap: 31px;
+        gap: 10px;
     }
     
     .container {
@@ -2227,5 +2230,13 @@ spline-viewer {
         padding-left: 0px;
         padding-right: 0px;
     }
-    
+    .burger-button {
+        min-width: 36px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header__right-part--phone a {
+        font-size: 12px;
+    }
 }
