@@ -4,11 +4,11 @@
     <img class="background" src="{% static 'images/contact-bg.png' %}" alt="">
     <div class="container">
         <div class="left-column">
-            <div class="contact-section-header">
+            <div class="contact-section-header container">
                 <p class="section-heading">Свяжитесь с нами</p>
                 <small>Разработаем оптимальное решение для ваших задач. Вы получите</small>
             </div>
-            <div class="stage-cards">
+            <div class="stage-cards container without-right">
                 <div class="stage-card">
                     <div class="stage-card-header">
                         <p class="stage-card-number">01</p>
@@ -21,18 +21,18 @@
                         <p class="stage-card-number">02</p>
                         <p class="stage-card-heading">Четкий план работ <br>от обследования до сдачи </p>
                     </div>
-                    <button class="gray-button">Скачать пример</button>
+                    <button class="gray-button"><span class="only-mobile">Пример</span><span class="only-desktop">Скачать пример</span></button>
                 </div>
                 <div class="stage-card">
                     <div class="stage-card-header">
                         <p class="stage-card-number">03</p>
                         <p class="stage-card-heading">Перечень необходимых <br>исходных данных </p>
                     </div>
-                    <button class="gray-button">Получить перечень</button>
+                    <button class="gray-button"><span class="only-mobile">Перечень</span><span class="only-desktop">Получить перечень</span></button>
                 </div>
             </div>
         </div>
-        <div class="right-column">
+        <div class="right-column container">
             <form>
                 <div class="label">
                     Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей
@@ -44,6 +44,7 @@
                 <textarea placeholder="Сообщение"  name="" id=""></textarea>
                 <div class="button-container">
                     <button class="red-button">Связаться с нами</button>
+                    <p class="agreement-text">Нажимая “Связаться с нами”, вы соглашаетесь на обработку персональных данных.</p>
                 </div>
             </form>
         </div>

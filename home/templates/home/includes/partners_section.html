@@ -45,24 +45,24 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="partners-slider swiper">
-                <div class="swiper-wrapper">
-                    {% for partner in partners %}
-                        <div class="partner swiper-slide">
-                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
-                        </div>
-                    {% endfor %}
-                    {% for partner in partners %}
-                        <div class="partner swiper-slide">
-                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
-                        </div>
-                    {% endfor %}
-                    {% for partner in partners %}
-                        <div class="partner swiper-slide">
-                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
-                        </div>
-                    {% endfor %}
-                </div>
+        </div>
+        <div class="partners-slider swiper">
+            <div class="swiper-wrapper">
+                {% for partner in partners %}
+                    <div class="partner swiper-slide">
+                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+                    </div>
+                {% endfor %}
+                {% for partner in partners %}
+                    <div class="partner swiper-slide">
+                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+                    </div>
+                {% endfor %}
+                {% for partner in partners %}
+                    <div class="partner swiper-slide">
+                        <img src="{{ partner.logo.url }}" alt="{{ partner.name }}">
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -95,7 +95,7 @@
         },
         breakpoints: {
           768: {
-            slidesPerView: 2,
+            slidesPerView: 3,
           },
           1024: {
             slidesPerView: 5.5,

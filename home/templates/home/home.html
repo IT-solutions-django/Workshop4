@@ -78,13 +78,17 @@
                 <p class="box-heading">Проектирование <br>конструктивных решений</p>
             </div>
             <div class="tags">
-              <span class="tag">Проектирование</span>
-              <span class="tag">Конструкторская документация</span>
-              <span class="tag">Обследование зданий</span>
-              <span class="tag">Анализ прочности</span>
-              <span class="tag">Технический аудит</span>
-              <span class="tag">Инженерные расчёты</span>
-              <span class="tag">Проектирование</span>
+                <div class="tag-row">
+                    <span class="tag">Проектирование</span>
+                    <span class="tag">Конструкторская документация</span>
+                    <span class="tag">Обследование зданий</span>
+                </div>
+                <div class="tag-row">
+                    <span class="tag">Анализ прочности</span>
+                    <span class="tag">Технический аудит</span>
+                    <span class="tag">Инженерные расчёты</span>
+                    <span class="tag">Проектирование</span>
+                </div>
             </div>
         </div>
       
@@ -143,9 +147,9 @@
 
 <!-- Галерея -->
 <section class="gallery-section container">
-    <p class="section-heading">Галерея работ</p>
+    <p class="section-heading container">Галерея работ</p>
     <div class="gallery-body">
-        <div class="filter-panel">
+        <div class="filter-panel container">
             <button class="active">Все направления</button>
             <button>Проектирование</button>
             <button>Конструкторская документация</button>
@@ -234,17 +238,10 @@
                     <input type="tel" name="" id="" placeholder="Телефон">
                 </div>
                 <textarea name="" id="" placeholder="Сообщение"></textarea>
-                <div class="form__checkbox">
-                    <div class=form__checkbox-wrap>
-                        <input checked type=checkbox id=questionsCheckbox name=consent required>
-                    </div>
-                    <div>
-                        <label for=questionsCheckbox class=form__checkbox-label>
-                            С <span class="color-red">правилами политики конфиденциальности</span> ознакомлен
-                        </label>
-                    </div>
+                <div class="button-container">
+                    <button class="red-button">Связаться с нами</button>
+                    <p class="agreement-text">Нажимая "Связаться с нами", вы соглашаетесь на обработку персональных данных.</p>
                 </div>
-                <button class="red-button">Связаться с нами</button>
             </form>
         </div>
     </div>
@@ -259,7 +256,7 @@
     const gallerySwiper = new Swiper('.gallery-slider.swiper', {
         spaceBetween: 24,
         initialSlide: 0,
-    
+        slidesOffsetBefore: 12,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -269,11 +266,17 @@
           clickable: true,
         },
         breakpoints: {
+          0: {
+            slidesPerView: 1.2,
+            spaceBetween: 12,
+          },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 1.2,
+            spaceBetween: 24,
           },
           1024: {
             slidesPerView: 3,
+            spaceBetween: 24,
           }
         }
       });
