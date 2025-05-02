@@ -20,6 +20,10 @@ a {
     color: white;
 }
 
+textarea {
+    outline: 0;
+}
+
 html {
     scroll-behavior: smooth; 
     max-width: 100%;

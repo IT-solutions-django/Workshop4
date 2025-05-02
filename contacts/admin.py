@@ -4,6 +4,7 @@ from .models import (
     Review, 
     Partner,
     Worker,
+    Request,
 )
 
 
@@ -25,3 +26,8 @@ class PartnerAdmin(admin.ModelAdmin):
 @admin.register(Worker) 
 class WorkerAdmin(admin.ModelAdmin): 
     list_display = ['name', 'position']
+
+
+@admin.register(Request) 
+class RequestAdmin(admin.ModelAdmin): 
+    list_display = ['name', 'phone']

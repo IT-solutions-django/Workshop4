@@ -17,14 +17,20 @@
 
     <div class="blog-body">
         <div class="filter-panel">
-            <a class="active">Все направления</a>
+            <a class="{% if not selected_category_id %}active{% endif %}" href="{% url 'blog:blog' %}">Все направления</a>
             {% for category in categories %}
-                <a>{{ category.name }}</a>
+                <a
+                    href="{% url 'blog:blog_category' category.id %}"
+                    class="{% if selected_category_id == category.id %}active{% endif %}"
+                >
+                    {{ category.name }}
+                </a>
             {% endfor %}
         </div>
         <div class="article-cards">
             {% for article in articles %}
-                <a href="{{ article.get_absolute_url }}" class="article-card {% if forloop.number == 1 or forloop.number == 6 or forloop.number == 8 %}big{% endif %}">
+                
+                <a href="{{ article.get_absolute_url }}" class="article-card {% if forloop.counter == 1 or forloop.counter == 6 or forloop.counter == 8 %}big{% endif %}">
                     <img src="{{ article.image.url }}" alt="">
                     <div class="badge">{{ article.created_at|date:"F Y" }}</div>
                     <p class="article-heading">{{ article.name }}</p>
@@ -35,11 +41,9 @@
     </div>
 
     <div class="blog-pagination">
-        <a href="" class="blog-pagination-link active">1</a>
-        <a href="" class="blog-pagination-link">2</a>
-        <a href="" class="blog-pagination-link">3</a>
-        <a href="" class="blog-pagination-link">...</a>
-        <a href="" class="blog-pagination-link">8</a>
+        {% for page in articles.paginator.page_range %}
+            <a href="?page={{ page }}" class="blog-pagination-link {% if articles.number == page %}active{% endif %}">{{ page }}</a>
+        {% endfor %}
     </div>
 </section>
 
