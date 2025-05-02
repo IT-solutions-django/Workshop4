@@ -1545,7 +1545,6 @@ section {
 }
 .services-card__image {
     object-fit: cover;
-    object-fit: cover;
     height: 100%;
     border-radius: 28px;
 }
@@ -1562,6 +1561,14 @@ section {
     flex-direction: column;
     gap: 12px;
 }
+.services-card .lower h2:not(:first-of-type) {
+    margin-top: 20px;
+}
+
+.services-card .lower h2 {
+    font-size: 28px;
+    line-height: 38px;
+}
 .service-card-list {
     display: flex;
     flex-direction: column;
@@ -1577,10 +1584,25 @@ section {
     margin-right: 8px;
     margin-left: 8px;
 }
-.services-card .badges-list-container {
+.services-card .lower ul {
+    display: flex;
+    flex-direction: column;
+}
+.services-card .lower ul li p {
+    font-size: 16px;
+    line-height: 38px;
+}
+.badges-list-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.services-card .lower ul li p::before {
+    content: "•";
+    color: #fff;
+    font-size: 16px;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 .services-card .subheading,
 .services-card .badges-list-container > p {
@@ -1600,11 +1622,7 @@ section {
     background-color: rgb(255, 255, 255, 0.05);
     border-radius: 100px;
 
-    cursor: pointer;
     transition: all 0.3s ease;
-}
-.services-card .badge:hover {
-    background-color: rgb(255, 255, 255, 0.15);
 }
 .tag-row {
     display: contents;

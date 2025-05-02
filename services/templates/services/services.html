@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
-{% load static %} 
+{% load static %}
+{% load markdown_tags %} 
 
 {% block title %}Услуги{% endblock title %}
 
@@ -15,6 +16,36 @@
         <h1 class="page-heading">Наши услуги</h1>
     </div>
     <div class="services-cards">
+
+        {% for service in services %}
+            <div class="services-card">
+                <div class="left-column">
+                    <div class="service-card-header">
+                        <p class="service-card-heading">{{ service.name }}</p>
+                        <p class="label">{{ service.subtitle }}</p>
+                    </div>
+                    <div class="lower">
+                        {{ service.description|markdown }}
+                    </div>
+                </div>
+                <div class="right-column">
+                    <img class="services-card__image {% if service.is_image_small %}small{% endif %}" src="{{ service.image.url }}" alt="">
+                    
+                    {% if service.task_examples.all %}
+                        <div class="badges-list-container">
+                            <p>Примеры задач</p>
+                            <div class="badges-list">
+                                {% for example in service.task_examples.all %}
+                                    <div class="badge">
+                                        {{ example.name }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
 
         <!-- Проектирование конструктивных решений -->
         <div class="services-card">
