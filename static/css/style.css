@@ -1160,6 +1160,7 @@ section {
     padding: 11px 14px;
     font-size: 16px;
     line-height: 22.4px;
+    text-wrap: nowrap;
 
     transition: all 0.3s ease;
 }
@@ -2009,7 +2010,7 @@ spline-viewer {
     }
     .advantages-section {
         padding-top: 49px;
-        gap: 76px
+        gap: 40px
     }
     .advantages-stats .label,
     .advantages-subheader p {
@@ -2323,6 +2324,7 @@ spline-viewer {
     }
     footer .left-column, footer .right-column {
         height: auto;
+        width: 100%;
     }
     footer .right-column {
         gap: 86px;
