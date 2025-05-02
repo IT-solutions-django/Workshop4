@@ -129,6 +129,48 @@ body {
     min-width: 106px;
 }
 
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu-heading {
+    position: absolute;
+    left: 16px;
+    top: 32px;
+    font-size: 20px;
+    line-height: 130%; 
+    font-weight: 600;
+}
+
+.mobile-menu-links {
+    top: 90px;
+    left: 16px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.mobile-menu-links a {
+    font-size: 16px;
+    line-height: 22.4px;
+}
+
 @media (max-width: 768px) {
     .only-desktop {
         display: none !important;
@@ -1871,6 +1913,48 @@ spline-viewer {
     color: #999999;
 }
 
+.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #141414;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.copy-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.burger-button {
+    position: relative;
+}
+.burger-button img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+    transition: opacity 0.3s ease;
+}
+
+.burger-button img.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.burger-button img.visible {
+    opacity: 1;
+}
+
+
 @media (max-width: 990px) {
     spline-viewer {
         display: none;
@@ -2268,31 +2352,23 @@ spline-viewer {
     }
     .burger-button {
         min-width: 36px;
+        z-index: 11;
     }
 }
 
 @media (max-width: 360px) {
     .header__right-part--phone a {
-        font-size: 12px;
+        font-size: 14px;
     }
-}
-
-.copy-notification {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #141414;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.copy-notification.show {
-    opacity: 1;
-    transform: translateY(0);
+    .header-mobile-logo, .header-mobile-logo img {
+        width: 94px;
+        max-width: 94px;
+        min-width: 94px;
+    }
+    .header__right-part {
+        gap: 16px;
+    }
+    .header__left-part {
+        gap: 0px;
+    }
 }
