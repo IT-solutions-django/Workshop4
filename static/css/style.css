@@ -185,6 +185,7 @@ header {
 
 footer {
     background-color: #222222;
+    border-top: 1px solid #333333;
 }
 footer .container {
     padding: 90px 0px;
@@ -923,16 +924,20 @@ section {
 .contact-section-header small {
     font-size: 20px;
 }
-.stage-card button {
+.stage-card button, 
+.stage-card a {
     padding: 12px 16px;
     border-radius: 12px;
     background-color: rgb(255, 255, 255, 0.06);
     font-size: 14px;
     line-height: 16px;
+    text-align: center;
 
+    cursor: pointer;
     transition: all 0.3s ease;
 }
-.stage-card button:hover {
+.stage-card button:hover, 
+.stage-card a:hover {
     background-color: rgb(255, 255, 255, 0.1);
 }
 .stage-cards {
@@ -1378,8 +1383,12 @@ section {
 .map-section textarea {
     width: 100%;
     background-color: #F2F2F2;
-    color: #999999;
+    color: #222222;
     border-radius: 12px;
+}
+.map-section input::placeholder, 
+.map-section textarea::placeholder {
+    color: #999999;
 }
 .map-section input {
     padding: 15.5px 16px;
@@ -1627,9 +1636,14 @@ section {
 .tag-row {
     display: contents;
 }
+.breadcrumbs a {
+    transition: all 0.3s ease;
+}
 .breadcrumbs a:last-child {
     color: #999999;
-    pointer-events: none;
+}
+.breadcrumbs a:hover {
+    opacity: 0.8;
 }
 .company-main-block {
     display: flex;
@@ -2261,4 +2275,24 @@ spline-viewer {
     .header__right-part--phone a {
         font-size: 12px;
     }
+}
+
+.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #141414;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.copy-notification.show {
+    opacity: 1;
+    transform: translateY(0);
 }

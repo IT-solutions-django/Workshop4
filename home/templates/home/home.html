@@ -152,7 +152,7 @@
         <div class="filter-panel container">
             <a class="active">Все направления</a>
             {% for category in categories %}
-                <a>{{ category.name }}</a>
+                <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
             {% endfor %}
         </div>
         <div class="gallery-slider swiper">
@@ -182,7 +182,7 @@
                         <p class="label">Адрес</p>
                         <div class="value-container">
                             <p class="value">{{ company_info.address }}</p>
-                            <small>пн-пт 08:30–17:30</small>
+                            <small>{{ company_info.work_hours }}</small>
                         </div>
                     </div>
                     <div class="phone">
@@ -204,12 +204,13 @@
                 </div>
             </div>
             <form class="right-column">
+                {% csrf_token %}
                 <p class="form-heading">Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей</p>
                 <div class="inputs-panel">
-                    <input type="text" placeholder="Имя">
-                    <input type="tel" name="" id="" placeholder="Телефон">
+                    <input type="text" required name="name" placeholder="Имя">
+                    <input type="tel" required name="phone" placeholder="Телефон">
                 </div>
-                <textarea name="" id="" placeholder="Сообщение"></textarea>
+                <textarea name="message" placeholder="Сообщение"></textarea>
                 <div class="button-container">
                     <button class="red-button">Связаться с нами</button>
                     <p class="agreement-text">Нажимая "Связаться с нами", вы соглашаетесь на обработку персональных данных.</p>
@@ -308,5 +309,24 @@ const quotesSwiper = new Swiper('.quote.swiper', {
     });
     myMap.geoObjects.add(a)
 }));
+</script>
+
+<script defer>
+const mapForm = document.querySelector('.map-section form');
+mapForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(mapForm);
+
+    try {
+        const response = await axios.post('/contacts/api/save-request/', formData);
+        
+        if (response.data.success) {
+            mapForm.reset();
+        }
+    } catch (error) {
+        console.error('Ошибка при отправке формы:', error);
+    }
+});
 </script>
 {% endblock %}

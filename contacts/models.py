@@ -60,6 +60,7 @@ class Request(models.Model):
     phone = models.CharField('Телефон', max_length=100)
     message = models.TextField('Сообщение', null=True, blank=True)
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
+    is_processed = models.BooleanField('Обработано', default=False)
 
     def __str__(self):
         return f'{self.name} ({self.phone})' 

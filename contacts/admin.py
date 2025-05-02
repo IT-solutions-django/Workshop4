@@ -30,4 +30,6 @@ class WorkerAdmin(admin.ModelAdmin):
 
 @admin.register(Request) 
 class RequestAdmin(admin.ModelAdmin): 
-    list_display = ['name', 'phone']
+    list_display = ['name', 'phone', 'message', 'created_at', 'is_processed']
+    list_filter = ['is_processed', 'created_at']
+    search_fields = ['name', 'phone', 'message']

@@ -15,7 +15,7 @@ class BlogView(View):
 
         context = {
             'articles': articles,
-            'categories': categories
+            'categories': categories,
         }
         return render(request, self.template_name, context)
     
@@ -23,8 +23,9 @@ class BlogView(View):
 class BlogCategoryView(View):
     template_name = 'blog/blog.html'
 
-    def get(self, request, category_id: int):
-        articles = Article.objects.filter(category_id=category_id)
+    def get(self, request, category_slug: str):
+        category = get_object_or_404(ArticleCategory, slug=category_slug)
+        articles = Article.objects.filter(category=category)
         categories = ArticleCategory.objects.all()
 
         articles = get_paginated_collection(request, articles)
@@ -32,7 +33,7 @@ class BlogCategoryView(View):
         context = {
             'articles': articles,
             'categories': categories, 
-            'selected_category_id': category_id
+            'selected_category_id': category.pk,
         }
         return render(request, self.template_name, context)
     
@@ -43,6 +44,6 @@ class ArticleView(View):
     def get(self, request, slug): 
         article = get_object_or_404(Article, slug=slug)
         context = {
-            'article': article
+            'article': article,
         }
         return render(request, self.template_name, context)

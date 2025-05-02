@@ -9,8 +9,8 @@
 <section class="blog-page container">
     <div class="header">
         <div class="breadcrumbs">
-            <a>Главная</a>
-            <a>Блог</a>
+            <a href="{% url 'home:home' %}">Главная</a>
+            <a href="{% url 'blog:blog' %}">Блог</a>
         </div>
         <h1 class="page-heading">Блог</h1>
     </div>
@@ -20,7 +20,7 @@
             <a class="{% if not selected_category_id %}active{% endif %}" href="{% url 'blog:blog' %}">Все направления</a>
             {% for category in categories %}
                 <a
-                    href="{% url 'blog:blog_category' category.id %}"
+                    href="{% url 'blog:blog_category' category.slug %}"
                     class="{% if selected_category_id == category.id %}active{% endif %}"
                 >
                     {{ category.name }}
@@ -40,11 +40,13 @@
         </div>
     </div>
 
+    {% if articles.paginator.num_pages > 1 %}
     <div class="blog-pagination">
         {% for page in articles.paginator.page_range %}
             <a href="?page={{ page }}" class="blog-pagination-link {% if articles.number == page %}active{% endif %}">{{ page }}</a>
-        {% endfor %}
-    </div>
+            {% endfor %}
+        </div>
+    {% endif %}
 </section>
 
 {% include 'home/includes/contact_section.html' %}
