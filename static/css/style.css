@@ -20,6 +20,10 @@ a {
     color: white;
 }
 
+textarea {
+    outline: 0;
+}
+
 html {
     scroll-behavior: smooth; 
     max-width: 100%;
@@ -125,6 +129,48 @@ body {
     min-width: 106px;
 }
 
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu-heading {
+    position: absolute;
+    left: 16px;
+    top: 32px;
+    font-size: 20px;
+    line-height: 130%; 
+    font-weight: 600;
+}
+
+.mobile-menu-links {
+    top: 90px;
+    left: 16px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.mobile-menu-links a {
+    font-size: 16px;
+    line-height: 22.4px;
+}
+
 @media (max-width: 768px) {
     .only-desktop {
         display: none !important;
@@ -181,6 +227,7 @@ header {
 
 footer {
     background-color: #222222;
+    border-top: 1px solid #333333;
 }
 footer .container {
     padding: 90px 0px;
@@ -919,16 +966,20 @@ section {
 .contact-section-header small {
     font-size: 20px;
 }
-.stage-card button {
+.stage-card button, 
+.stage-card a {
     padding: 12px 16px;
     border-radius: 12px;
     background-color: rgb(255, 255, 255, 0.06);
     font-size: 14px;
     line-height: 16px;
+    text-align: center;
 
+    cursor: pointer;
     transition: all 0.3s ease;
 }
-.stage-card button:hover {
+.stage-card button:hover, 
+.stage-card a:hover {
     background-color: rgb(255, 255, 255, 0.1);
 }
 .stage-cards {
@@ -1102,22 +1153,25 @@ section {
     display: flex;
     gap: 12px;
 }
+.filter-panel a,
 .filter-panel button {
     border-radius: 100px;
     background-color: rgb(255, 255, 255, 0.05);
     padding: 11px 14px;
     font-size: 16px;
     line-height: 22.4px;
+    text-wrap: nowrap;
 
     transition: all 0.3s ease;
 }
 .services-section .tags .tag {
     transition: all 0.3s ease;
-    cursor: pointer;
 }
+.filter-panel a:hover,
 .filter-panel button:hover {
     background-color: rgb(255, 255, 255, 0.15);
 }
+.filter-panel a.active,
 .filter-panel button.active {
     background-color: white;
     color: #222222;
@@ -1372,8 +1426,12 @@ section {
 .map-section textarea {
     width: 100%;
     background-color: #F2F2F2;
-    color: #999999;
+    color: #222222;
     border-radius: 12px;
+}
+.map-section input::placeholder, 
+.map-section textarea::placeholder {
+    color: #999999;
 }
 .map-section input {
     padding: 15.5px 16px;
@@ -1539,7 +1597,6 @@ section {
 }
 .services-card__image {
     object-fit: cover;
-    object-fit: cover;
     height: 100%;
     border-radius: 28px;
 }
@@ -1556,6 +1613,14 @@ section {
     flex-direction: column;
     gap: 12px;
 }
+.services-card .lower h2:not(:first-of-type) {
+    margin-top: 20px;
+}
+
+.services-card .lower h2 {
+    font-size: 28px;
+    line-height: 38px;
+}
 .service-card-list {
     display: flex;
     flex-direction: column;
@@ -1571,10 +1636,25 @@ section {
     margin-right: 8px;
     margin-left: 8px;
 }
-.services-card .badges-list-container {
+.services-card .lower ul {
+    display: flex;
+    flex-direction: column;
+}
+.services-card .lower ul li p {
+    font-size: 16px;
+    line-height: 38px;
+}
+.badges-list-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.services-card .lower ul li p::before {
+    content: "•";
+    color: #fff;
+    font-size: 16px;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 .services-card .subheading,
 .services-card .badges-list-container > p {
@@ -1594,18 +1674,19 @@ section {
     background-color: rgb(255, 255, 255, 0.05);
     border-radius: 100px;
 
-    cursor: pointer;
     transition: all 0.3s ease;
-}
-.services-card .badge:hover {
-    background-color: rgb(255, 255, 255, 0.15);
 }
 .tag-row {
     display: contents;
 }
+.breadcrumbs a {
+    transition: all 0.3s ease;
+}
 .breadcrumbs a:last-child {
     color: #999999;
-    pointer-events: none;
+}
+.breadcrumbs a:hover {
+    opacity: 0.8;
 }
 .company-main-block {
     display: flex;
@@ -1833,6 +1914,48 @@ spline-viewer {
     color: #999999;
 }
 
+.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #141414;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.copy-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.burger-button {
+    position: relative;
+}
+.burger-button img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+    transition: opacity 0.3s ease;
+}
+
+.burger-button img.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.burger-button img.visible {
+    opacity: 1;
+}
+
+
 @media (max-width: 990px) {
     spline-viewer {
         display: none;
@@ -1875,9 +1998,10 @@ spline-viewer {
     .header__right-part--phone a {
         font-size: 14px;
         line-height: 19px;
+        text-wrap: nowrap;
     }
     .header__row {
-        gap: 31px;
+        gap: 10px;
     }
     
     .container {
@@ -1886,7 +2010,7 @@ spline-viewer {
     }
     .advantages-section {
         padding-top: 49px;
-        gap: 76px
+        gap: 40px
     }
     .advantages-stats .label,
     .advantages-subheader p {
@@ -2200,6 +2324,7 @@ spline-viewer {
     }
     footer .left-column, footer .right-column {
         height: auto;
+        width: 100%;
     }
     footer .right-column {
         gap: 86px;
@@ -2227,5 +2352,25 @@ spline-viewer {
         padding-left: 0px;
         padding-right: 0px;
     }
-    
+    .burger-button {
+        min-width: 36px;
+        z-index: 11;
+    }
+}
+
+@media (max-width: 360px) {
+    .header__right-part--phone a {
+        font-size: 14px;
+    }
+    .header-mobile-logo, .header-mobile-logo img {
+        width: 94px;
+        max-width: 94px;
+        min-width: 94px;
+    }
+    .header__right-part {
+        gap: 16px;
+    }
+    .header__left-part {
+        gap: 0px;
+    }
 }

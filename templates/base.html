@@ -12,10 +12,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-
     <!-- Local files -->
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -23,6 +19,7 @@
     <!-- Libraries -->
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <script src="{% static 'js/imask/Imask.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -136,7 +133,19 @@
                 <button class="header__right-part--button only-desktop">
                     Связаться с нами
                 </button>
-            </div>     
+            </div> 
+            
+            <div class="mobile-menu">
+                <p class="mobile-menu-heading">Меню</p>
+                <div class="mobile-menu-links">
+                    <a href="{% url 'home:home' %}">Главная</a>
+                    <a href="{% url 'services:services' %}">Услуги</a>
+                    <a href="{% url 'contacts:about_company' %}">О компании</a>
+                    <a href="{% url 'blog:blog' %}">Блог</a>
+                    <a href="">Контакты</a>
+                </div>
+            </div>
+
         </div>
     </header>
 
@@ -268,29 +277,39 @@
 
 <!-- Меню-бургер -->
 <script defer>
-    document.addEventListener("DOMContentLoaded", function () {
-        let scrollPosition = 0;
+    const burgerButton = document.querySelector('.burger-button'); 
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const burgerIcon = burgerButton.querySelector('img');
+    const body = document.querySelector('body');
+    const html = document.documentElement;
+    
+    const closeIcon = document.createElement('img');
+    closeIcon.src = "{% static 'images/close-burger.svg' %}";
+    closeIcon.alt = "Закрыть меню";
+    closeIcon.classList.add('hidden');
+    burgerButton.appendChild(closeIcon);
 
-        document.querySelector(".header__hamburger").addEventListener("click", function () {
-            this.classList.toggle("active");
-            document.querySelector('.header__mobile-menu-heading').classList.toggle("active");
-            const nav = document.querySelector(".header__nav");
-            const body = document.querySelector("body");
+    burgerIcon.classList.add('visible');
+    closeIcon.classList.add('hidden');
 
-            nav.classList.toggle("active");
+    burgerButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
 
-            if (nav.classList.contains("active")) {
-                // Сохраняем текущую позицию и отключаем прокрутку
-                scrollPosition = window.scrollY;
-                body.classList.add("scroll-disabled");
-                body.style.top = `-${scrollPosition}px`;
-            } else {
-                // Убираем блокировку и восстанавливаем позицию
-                body.classList.remove("scroll-disabled");
-                body.style.top = "";
-                window.scrollTo(0, scrollPosition);
-            }
-        });
+        if (mobileMenu.classList.contains('active')) {
+            body.style.overflow = 'hidden';
+            html.style.overflow = 'hidden';
+            burgerIcon.classList.remove('visible');
+            burgerIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+            closeIcon.classList.add('visible');
+        } else {
+            body.style.overflow = '';
+            html.style.overflow = '';
+            burgerIcon.classList.remove('hidden');
+            burgerIcon.classList.add('visible');
+            closeIcon.classList.remove('visible');
+            closeIcon.classList.add('hidden');
+        }
     });
 </script>
 

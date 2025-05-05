@@ -1,6 +1,6 @@
 {% extends 'base.html' %} 
 {% load static %} 
-
+{% load markdown_tags %}
 {% block title %}Блог{% endblock title %}
 
 {% block content %}
@@ -11,35 +11,29 @@
         <div class="breadcrumbs">
             <a>Главная</a>
             <a>Блог</a>
-            <a href="">Профессиональный авторский надзор</a>
+            <a href="">{{ article.category.name }}</a>
         </div>
-        <h1 class="page-heading">Профессиональный авторский надзор</h1>
+        <h1 class="page-heading">{{ article.name }}</h1>
     </div>
 
     <div class="article-body">
         <div class="article-header">
-            <img src="{% static 'images/article-photo.png' %}" alt="">
+            <img src="{{ article.image.url }}" alt="">
             <div class="article-header-wrapper">
-                <div class="article-page-badge">апрель 2025</div>
-                <div class="article-page-heading">Профессиональный <br> авторский надзор</div>
-                <div class="article-page-label">Визуальный осмотр, инструментальная диагностика, анализ грунтов</div>
+                <div class="article-page-badge">{{ article.created_at|date:"F Y" }}</div>
+                <div class="article-page-heading">{{ article.name }}</div>
+                <div class="article-page-label">{{ article.subtitle }}</div>
             </div>
         </div>
         <div class="article-content">
             <div class="article-content-text">
-                Авторский надзор — это не просто проверка соответствия стройки чертежам. Это активное участие проектировщика в реализации задуманного, когда каждая деталь контролируется с профессиональной точностью. <br>
-                Мы сопровождаем проекты на всех этапах строительства, чтобы обеспечить точность исполнения, соблюдение проектных решений и предотвращение возможных отклонений. Благодаря авторскому надзору заказчик получает не просто здание — он получает реализацию своей идеи в точном соответствии с проектом.
-                <br><br>
-                Почему это важно?<br> 
-                – Исключение строительных ошибок<br> 
-                – Своевременная корректировка проектных решений<br> 
-                – Экономия времени и бюджета на переделки <br>
-                Профессиональный авторский надзор — это гарантия того, что проект будет реализован именно так, как задумывался.
+                {{ article.content|markdown }}
             </div>
             <button class="article-share-button">
                 <img src="{% static 'images/share.svg' %}" alt="">
                 <p>Поделиться</p>
             </button>
+            <div class="copy-notification">Ссылка скопирована!</div>
         </div>
     </div>
 </section>
@@ -49,4 +43,20 @@
 {% endblock %}
 
 {% block script %}
+<script defer>
+    const shareButton = document.querySelector('.article-share-button');
+    const notification = document.querySelector('.copy-notification');
+    
+    shareButton.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(window.location.href);
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000);
+        } catch (err) {
+            console.error('Ошибка при копировании:', err);
+        }
+    });
+</script>
 {% endblock %}

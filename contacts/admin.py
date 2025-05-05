@@ -4,6 +4,7 @@ from .models import (
     Review, 
     Partner,
     Worker,
+    Request,
 )
 
 
@@ -25,3 +26,10 @@ class PartnerAdmin(admin.ModelAdmin):
 @admin.register(Worker) 
 class WorkerAdmin(admin.ModelAdmin): 
     list_display = ['name', 'position']
+
+
+@admin.register(Request) 
+class RequestAdmin(admin.ModelAdmin): 
+    list_display = ['name', 'phone', 'message', 'created_at', 'is_processed']
+    list_filter = ['is_processed', 'created_at']
+    search_fields = ['name', 'phone', 'message']

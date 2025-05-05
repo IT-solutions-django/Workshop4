@@ -78,6 +78,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 'home.context_processors.company_info',
+                'home.context_processors.contact_form',
             ],
         },
     },
