@@ -41,6 +41,10 @@ body {
     color: var(--color-white);
 
     max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+
+    max-width: 100%;
     width: 100%;
     overflow-x: hidden;
 }
@@ -1028,19 +1032,27 @@ section {
     flex-direction: column;
     gap: 44px;
     position: relative;
+
+    overflow: visible;
+}
+main {
+    overflow: hidden;
 }
 .partners-background {
     object-fit: contain;
     position: absolute;
     right: -147px;
     bottom: -264px;
+
+    right: -273px;
+    bottom: -966px;
 }
 .partners-bg-lines {
     object-fit: contain;
     position: absolute;
     scale: 1.5;
-    left: -150px;
-    top: -22px
+    left: -546px;
+    top: 79px;
 }
 .section-heading {
     font-size: 60px;

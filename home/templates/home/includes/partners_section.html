@@ -5,47 +5,49 @@
     <img class="partners-bg-lines" src="{% static 'images/partners-bg-lines.png' %}" alt="">
     <h2 class="section-heading">Нам доверяют</h2>
     <div class="partners-body">
-        <div class="partners-stats partners-container">
-            <div class="partners-stat">
-                <p class="number">4.8</p>
-                <p class="label">Средняя оценка на Яндекс и 2GIS</p>
+        {% if not is_home_page %}
+            <div class="partners-stats partners-container">
+                <div class="partners-stat">
+                    <p class="number">4.8</p>
+                    <p class="label">Средняя оценка на Яндекс и 2GIS</p>
+                </div>
+                <div class="partners-stat">
+                    <p class="number">80%</p>
+                    <p class="label">клиентов обращаются снова</p>
+                </div>
+                <div class="partners-stat">
+                    <p class="number">100+ </p>
+                    <p class="label">довольных заказчиков</p>
+                </div>
+                <div class="partners-stat">
+                    <p class="number">10+ </p>
+                    <p class="label">регионов России</p>
+                </div>
             </div>
-            <div class="partners-stat">
-                <p class="number">80%</p>
-                <p class="label">клиентов обращаются снова</p>
-            </div>
-            <div class="partners-stat">
-                <p class="number">100+ </p>
-                <p class="label">довольных заказчиков</p>
-            </div>
-            <div class="partners-stat">
-                <p class="number">10+ </p>
-                <p class="label">регионов России</p>
-            </div>
-        </div>
-        <div class="reviews-slider swiper">
-            <div class="swiper-wrapper">
-                {% for review in reviews %}
-                    <div class="review swiper-slide">
-                        <div class="upper">
-                            <div class="stars">
-                                <img src="{% static 'images/star.svg' %}" alt="">
-                                <img src="{% static 'images/star.svg' %}" alt="">
-                                <img src="{% static 'images/star.svg' %}" alt="">
-                                <img src="{% static 'images/star.svg' %}" alt="">
-                                <img src="{% static 'images/star.svg' %}" alt="">
+            <div class="reviews-slider swiper">
+                <div class="swiper-wrapper">
+                    {% for review in reviews %}
+                        <div class="review swiper-slide">
+                            <div class="upper">
+                                <div class="stars">
+                                    <img src="{% static 'images/star.svg' %}" alt="">
+                                    <img src="{% static 'images/star.svg' %}" alt="">
+                                    <img src="{% static 'images/star.svg' %}" alt="">
+                                    <img src="{% static 'images/star.svg' %}" alt="">
+                                    <img src="{% static 'images/star.svg' %}" alt="">
+                                </div>
+                                <p class="review-heading">{{ review.name }}</p>
+                                <p class="review-text">{{ review.text }}</p>
                             </div>
-                            <p class="review-heading">{{ review.name }}</p>
-                            <p class="review-text">{{ review.text }}</p>
+                            <div class="lower">
+                                <p class="author-name">{{ review.author_name }}</p>
+                                <p class="author-position">{{ review.author_company }}</p>
+                            </div>
                         </div>
-                        <div class="lower">
-                            <p class="author-name">{{ review.author_name }}</p>
-                            <p class="author-position">{{ review.author_company }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
+        {% endif %}
         <div class="partners-slider swiper">
             <div class="swiper-wrapper">
                 {% for partner in partners %}
@@ -68,6 +70,16 @@
     </div>
 </section>
 
+{% if is_home_page %}
+<style>
+    .partners-body {
+        padding-top: 0px;;
+    }
+    .partners-slider {
+        margin-top: 0px;
+    }
+</style>
+{% endif %}
 
 <!-- Партнёры -->
 <script defer>
