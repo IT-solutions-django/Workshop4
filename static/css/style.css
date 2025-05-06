@@ -309,6 +309,10 @@ main {
     margin-top: 84px;
 
     padding-top: 69px;
+
+    padding-top: min(40px, 10vh);
+
+    position: relative;
 }
 
 section {
@@ -335,9 +339,19 @@ section {
 }
 
 .container {
-    max-width: 1580px;
+    max-width: min(85%, 1580px);
     margin: 0 auto;
     width: 100%;
+}
+@media (max-width: 1620px) {
+    .container {
+        max-width: min(85%, 1580px);
+    }
+}
+@media (max-width: 1300px) {
+    .container {
+        max-width: min(90%, 1580px);
+    }
 }
 
 header .container {
@@ -582,20 +596,27 @@ body,
 .welcome-logo, 
 .welcome-logo img {
     border-radius: 60px;
-    width: 962px;
+    border-radius: 0.8vh;
+    /* width: 962px; */
+
+    height: 20vh;
 }
 
 .welcome-section {
     padding-top: 66px;
     position: relative;
+
+    padding-top: 5vh;
+
+    gap: 2vh;
 }
 .main-bg {
     position: absolute;
     object-fit: contain;
     z-index: -1;
     right: 0px;
-    right: calc((100vw - 1480px) / 2 - 600px);
-    transform: translateY(-500px);
+    right: calc((100vw - 1480px) / 2 - 460px);
+    transform: translateY(-600px);
     mix-blend-mode: normal;
 }
 .welcome-header {
@@ -603,17 +624,25 @@ body,
     display: flex;
     flex-direction: column;
     gap: 25px;
+
+    padding-top: 6vh;
 }
 .welcome-header h1 {
     font-size: 96px;
     font-weight: 500;
     line-height: 105px;
     letter-spacing: 0px;
+
+    font-size: 7vh;
+    line-height: calc(7vh + 10px);
 }
 .section-description {
     color: var(--color-darkened-white);
     font-size: 20px;
     line-height: 26px;
+
+    font-size: 2.2vh;
+    line-height: calc(2.2vh + 10px);
 }
 .red-button {
     padding: 20px;
@@ -1893,8 +1922,13 @@ main {
 spline-viewer {
     position: absolute;
     right: -540px;
-    top: 200px;
     z-index: -10;
+
+    right: -700px;
+    top: -2100px;
+    bottom: auto;
+
+    /* top: -3 */
 }
 
 
