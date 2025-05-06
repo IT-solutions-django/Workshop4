@@ -329,4 +329,27 @@ mapForm.addEventListener('submit', async (e) => {
     }
 });
 </script>
+
+<!-- Логотип в шапке -->
+<script defer>
+    const welcomeLogo = document.querySelector('.welcome-logo');
+    const headerLogo = document.querySelector('header .header__logo'); 
+    const headerMenu = document.querySelector('header .header__menu');
+
+    console.log(headerLogo)
+
+    window.addEventListener('scroll', () => {
+        const welcomeLogoBottom = welcomeLogo.getBoundingClientRect().bottom;
+        
+        if (welcomeLogoBottom <= 0) {
+            headerLogo.classList.add('visible');
+            headerMenu.classList.add('visible');
+            console.log('прошли')
+        } else {
+            headerLogo.classList.remove('visible');
+            headerMenu.classList.remove('visible');
+        }
+    });
+</script>
+
 {% endblock %}

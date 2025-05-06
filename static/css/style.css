@@ -365,9 +365,23 @@ body,
     height: 80px;
     margin-top: 10px;
     margin-bottom: 14px;
-
     display: flex;
     align-items: center;
+    opacity: 0;
+    transform: translateX(-87px);
+    transition: all 0.4s ease;
+}
+
+.header__logo.visible {
+    opacity: 1;
+    transform: translateX(-0px);
+}
+.header__menu {
+    transform: translateX(-87px);
+    transition: all 0.4s ease;
+}
+.header__menu.visible {
+    transform: translateX(-0px);
 }
 
 .header__logo-link {
