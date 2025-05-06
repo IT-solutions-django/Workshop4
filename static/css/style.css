@@ -369,7 +369,7 @@ body,
     align-items: center;
     opacity: 0;
     transform: translateX(-87px);
-    transition: all 0.4s ease;
+    transition: all 0.6s ease;
 }
 
 .header__logo.visible {
@@ -378,7 +378,7 @@ body,
 }
 .header__menu {
     transform: translateX(-87px);
-    transition: all 0.4s ease;
+    transition: all 0.6s ease;
 }
 .header__menu.visible {
     transform: translateX(-0px);
