@@ -92,13 +92,13 @@
     <header class="header">
         <div class="header__row">
             <div class="header__left-part">
-                {% if not is_home_page %}
+              
                     <div class="header__logo only-desktop">
                         <a href="{% url 'home:home' %}" class="header__logo-link">
                             <img src="{% static 'images/logo.svg' %}" alt="Логотип">
                         </a>
                     </div>
-                {% endif %}
+              
                 <a class="only-mobile header-mobile-logo">
                     <img src="{% static 'images/logo.svg' %}" alt="">
                 </a>
@@ -116,9 +116,9 @@
                         <div class="header__menu-link">
                             <a class="red-hover" href="{% url 'blog:blog' %}">Блог</a>
                         </div>
-                        <div class="header__menu-link">
+                        <!-- <div class="header__menu-link">
                             <a class="red-hover" href="">Контакты</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -142,7 +142,7 @@
                     <a href="{% url 'services:services' %}">Услуги</a>
                     <a href="{% url 'contacts:about_company' %}">О компании</a>
                     <a href="{% url 'blog:blog' %}">Блог</a>
-                    <a href="">Контакты</a>
+                    <!-- <a href="">Контакты</a> -->
                 </div>
             </div>
 
@@ -171,7 +171,7 @@
                             <a class="hover-white" href="{% url 'services:services' %}">Услуги</a>
                             <a class="hover-white" href="{% url 'contacts:about_company' %}">О компании</a>
                             <a class="hover-white" href="{% url 'blog:blog' %}">Блог</a>
-                            <a class="hover-white" href="">Контакты</a>
+                            <!-- <a class="hover-white" href="">Контакты</a> -->
                         </div>
                         <div class="links-list">
                             <a target="_blank" class="hover-white" href="{{ company_info.whatsapp_link }}">Whatsapp</a>

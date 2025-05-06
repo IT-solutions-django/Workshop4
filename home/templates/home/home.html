@@ -4,6 +4,13 @@
 {% block title %}Цех №4{% endblock title %}
 
 {% block content %}
+<!-- Odometer.js -->
+<script defer src="{% static 'js/odometer/odometer.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/odometer-default-theme.css' %}" />
+<!-- InView.js -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'js/inview/inview.js' %}"></script>
+
 <img class="main-bg" src="{% static 'images/gray-lines-bg.svg' %}" alt="">
 
 <!-- 3D-анимация -->
@@ -50,15 +57,15 @@
         </div>
         <div class="advantages-stats-container">
             <div class="advantages-stat">
-                <p class="heading">150+</p>
+                <p class="heading"><span class="odometer" id="projects-count">0</span>+</p>
                 <p class="label">завершенных проектов</p>
             </div>
             <div class="advantages-stat">
-                <p class="heading">500 тыс+ </p>
+                <p class="heading"><span class="odometer" id="area-count">0</span> тыс+ </p>
                 <p class="label">м² площадь спроектированных объектов</p>
             </div>
             <div class="advantages-stat">
-                <p class="heading">до 100%</p>
+                <p class="heading"><span class="odometer" id="bim-count">0</span> %</p>
                 <p class="label">проектов, выполненных с BIM-моделированием </p>
             </div>
         </div>
@@ -329,4 +336,48 @@ mapForm.addEventListener('submit', async (e) => {
     }
 });
 </script>
+
+<!-- Логотип в шапке -->
+<script defer>
+    const welcomeLogo = document.querySelector('.welcome-logo');
+    const headerLogo = document.querySelector('header .header__logo'); 
+    const headerMenu = document.querySelector('header .header__menu');
+
+    console.log(headerLogo)
+
+    window.addEventListener('scroll', () => {
+        const welcomeLogoBottom = welcomeLogo.getBoundingClientRect().bottom;
+        
+        if (welcomeLogoBottom <= 0) {
+            headerLogo.classList.add('visible');
+            headerMenu.classList.add('visible');
+            console.log('прошли')
+        } else {
+            headerLogo.classList.remove('visible');
+            headerMenu.classList.remove('visible');
+        }
+    });
+</script>
+
+
+<script defer>
+    // Анимации
+document.addEventListener('DOMContentLoaded', () => {
+    let projectsCount = document.querySelector('#projects-count'); 
+    let areaCount = document.querySelector('#area-count');
+    let bimCount = document.querySelector('#bim-count'); 
+
+    console.log(projectsCount)
+
+
+    function runStatsAnimation() {
+        projectsCount.innerHTML = 150;
+        areaCount.innerHTML = 500; 
+        bimCount.innerHTML = 100; 
+    }
+
+    inView('.advantages-stats-container').once('enter', runStatsAnimation);
+});
+</script>
+
 {% endblock %}
