@@ -17,8 +17,9 @@
         <h1 class="page-heading">{{ service.name }}</h1>
     </div>
     <div class="company-main-block">
-        <p>Мы — команда профессионалов, объединённых одной целью: создавать надёжные, эффективные и безопасные решения в сфере проектирования и строительного инжиниринга. Уже много лет мы работаем на рынке, сочетая техническую экспертизу с индивидуальным подходом к каждому проекту.</p>
-        <small>В нашей команде — опытные инженеры, проектировщики, эксперты, архитекторы и специалисты по согласованию документации. Мы ценим каждого сотрудника и постоянно инвестируем в повышение квалификации и развитие профессиональных компетенций.</small>
+        <p class="content__text service-description" data-splitting>{{ service.description_detail }}</p>
+        <!-- <p class="content__text service-description" data-splitting>{{ service.description_detail }}</p> -->
+        <small>{{ service.label }}</small>
     </div>
 
     <div class="service-stages-container">
@@ -95,4 +96,11 @@
         }
       });
 </script>
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/splitting.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/splitting-cells.css' %}" />
+<script src="{% static 'js/splitting.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="{% static 'js/service-text-appear.js' %}"></script>
 {% endblock %}
