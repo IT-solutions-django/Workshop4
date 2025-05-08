@@ -158,10 +158,27 @@
         <div class="container">
             <div class="content">
                 <div class="left-column">
-                    <p class="address">{{ company_info.address }}</p>
+                    <div class="address">
+                        <p>{{ company_info.address }}</p>
+                        <small>{{ company_info.work_hours }}</small>
+                    </div>
                     <div class="footer-contacts">
-                        <a target="_blank" href="tel:{{ company_info.phone }}" class="phone">{{ company_info.phone }}</a>
+                        <div class="phone-container">
+                            <small>Телефон</small>
+                            <a target="_blank" href="tel:{{ company_info.phone }}" class="phone">{{ company_info.phone }}</a>
+                        </div>
                         <a target="_blank" href="mailto:{{ company_info.email }}" class="email">{{ company_info.email }}</a>
+                        <div class="social-links">
+                            <a target="_blank" href="{{ company_info.telegram_link }}">
+                                <img src="{% static 'images/telegram.svg' %}" alt="">
+                            </a>
+                            <a target="_blank" href="{{ company_info.whatsapp_link }}">
+                                <img src="{% static 'images/whatsapp.svg' %}" alt="">
+                            </a>
+                            <a target="_blank" href="{{ company_info.vk_link }}">
+                                <img src="{% static 'images/vk.svg' %}" alt="">
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="right-column">
@@ -185,7 +202,7 @@
                 </div>
             </div>
             <a href="{% url 'home:home' %}" class="footer-logo">
-                <img src="{% static 'images/logo.svg' %}" alt="">
+                <img src="{% static 'images/sharp-logo.svg' %}" alt="">
             </a>
         </div>
     </footer>

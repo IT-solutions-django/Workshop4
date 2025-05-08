@@ -254,13 +254,14 @@ footer .left-column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 24px;
 }
 footer .right-column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 82px;
-    width: 370px;
+    min-width: 368px;
+    width: 368px;
 }
 footer .right-column .upper {
     display: flex;
@@ -281,17 +282,45 @@ footer .links-list {
 footer .left-column .address {
     font-size: 24px;
     line-height: 36px;
-    max-width: 515px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+footer .left-column .address small {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1%;
+    color: #666666;
 }
 .footer-contacts {
     display: flex;
     flex-direction: column;
-    gap: 27px;
+    gap: 24px;
 }
 .footer-contacts .phone, 
 .footer-contacts .email {
     font-size: 16px;
     line-height: 22px;
+}
+.footer-contacts .phone-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.footer-contacts .phone-container small {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1%;
+}
+.footer-contacts .email,
+.footer-contacts .phone-container a {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 1%;
+}
+.footer-contacts .email {
+    font-weight: 400;
 }
 .footer-contacts .email {
     color: var(--color-red)
@@ -299,6 +328,7 @@ footer .left-column .address {
 .footer-logo {
     width: 244px;
     min-width: 244px;
+    margin-right: 6%;
 }
 
 .nav__dropdown-content-wrapper {
@@ -1096,6 +1126,7 @@ main {
     scale: 1.5;
     left: -546px;
     top: 79px;
+    z-index: -10;
 }
 .section-heading {
     font-size: 60px;
@@ -1458,10 +1489,9 @@ main {
     color: var(--color-red);
     line-height: 24px;
 }
-.map-section .social-links {
+footer .social-links {
     display: flex;
     gap: 10px;
-    padding-top: 32px;
 }
 .map-section .right-column {
     min-width: 555px;
@@ -2347,7 +2377,7 @@ spline-viewer {
         font-size: 16px;
         line-height: 16px;
     }
-    .map-section .social-links {
+    footer .social-links {
         padding-top: 0px;
     }
     .map-section .form-heading {
