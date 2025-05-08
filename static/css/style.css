@@ -2001,6 +2001,9 @@ spline-viewer {
     /* top: -3 */
 }
 
+.contact-section {
+    align-items: center;
+}
 
 .swiper-quotes-prev,
 .swiper-quotes-next {

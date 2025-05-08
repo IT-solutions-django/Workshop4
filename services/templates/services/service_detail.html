@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base-service.html' %}
 {% load static %}
 
 {% block title %}
@@ -8,17 +8,10 @@
 {% block content %}
 <img class="main-bg" src="{% static 'images/gray-lines-bg.svg' %}" alt="">
 
+
 <section class="service-page container">
-    <div class="header">
-        <div class="breadcrumbs">
-            <a href="{% url 'home:home' %}">Главная</a>
-            <a href="{% url 'services:services' %}">Услуги</a>
-        </div>
-        <h1 class="page-heading">{{ service.name }}</h1>
-    </div>
     <div class="company-main-block">
         <p class="content__text service-description" data-splitting>{{ service.description_detail }}</p>
-        <!-- <p class="content__text service-description" data-splitting>{{ service.description_detail }}</p> -->
         <small>{{ service.label }}</small>
     </div>
 
@@ -97,6 +90,10 @@
       });
 </script>
 
+<!-- Передаем название услуги в JavaScript -->
+<script>
+    window.serviceName = "{{ service.name }}";
+</script>
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/splitting.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/splitting-cells.css' %}" />

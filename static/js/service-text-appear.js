@@ -75,10 +75,9 @@ const switchTexts = () => {
 };
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    // switchTexts();
-    setTimeout(() => {
-        document.querySelector('.company-main-block p').style.opacity = 1;
-        switchTexts();
-    }, 0);
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     setTimeout(() => {
+//         document.querySelector('.company-main-block p').style.opacity = 1;
+//         switchTexts();
+//     }, 0);
+// });
