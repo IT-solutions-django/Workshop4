@@ -254,13 +254,14 @@ footer .left-column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 24px;
 }
 footer .right-column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 82px;
-    width: 370px;
+    min-width: 368px;
+    width: 368px;
 }
 footer .right-column .upper {
     display: flex;
@@ -281,17 +282,45 @@ footer .links-list {
 footer .left-column .address {
     font-size: 24px;
     line-height: 36px;
-    max-width: 515px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+footer .left-column .address small {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1%;
+    color: #666666;
 }
 .footer-contacts {
     display: flex;
     flex-direction: column;
-    gap: 27px;
+    gap: 24px;
 }
 .footer-contacts .phone, 
 .footer-contacts .email {
     font-size: 16px;
     line-height: 22px;
+}
+.footer-contacts .phone-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.footer-contacts .phone-container small {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1%;
+}
+.footer-contacts .email,
+.footer-contacts .phone-container a {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 1%;
+}
+.footer-contacts .email {
+    font-weight: 400;
 }
 .footer-contacts .email {
     color: var(--color-red)
@@ -299,6 +328,21 @@ footer .left-column .address {
 .footer-logo {
     width: 244px;
     min-width: 244px;
+    margin-right: 6%;
+}
+.service-card-arrow {
+    transform: translateY(3px);
+
+    display: inline-flex;
+
+    transition: all 0.3s ease;
+}
+.service-card-arrow:hover {
+    opacity: 0.7;
+}
+.service-card-arrow img {
+    width: 40px;
+    height: 40px;
 }
 
 .nav__dropdown-content-wrapper {
@@ -599,12 +643,12 @@ body,
     border-radius: 0.8vh;
     /* width: 962px; */
 
-    height: 20vh;
+    height: 24vh;
 }
 
 .welcome-section {
     padding-top: 66px;
-    position: relative;
+    /* position: relative; */
 
     padding-top: 5vh;
 
@@ -620,12 +664,12 @@ body,
     mix-blend-mode: normal;
 }
 .welcome-header {
-    padding-top: 190px;
+    /* padding-top: 190px; */
     display: flex;
     flex-direction: column;
     gap: 25px;
 
-    padding-top: 6vh;
+    /* padding-top: 6vh; */
 }
 .welcome-header h1 {
     font-size: 96px;
@@ -1044,7 +1088,7 @@ section {
     border-radius: 28px;
     background-color: #333333;
     padding: 23px 37px 22px 17px;
-    height: 234px;
+    /* height: 234px; */
 }
 .stage-card-number {
     font-size: 54px;
@@ -1086,6 +1130,7 @@ main {
     position: absolute;
     right: -147px;
     bottom: -264px;
+    z-index: -10;
 
     right: -273px;
     bottom: -966px;
@@ -1096,6 +1141,7 @@ main {
     scale: 1.5;
     left: -546px;
     top: 79px;
+    z-index: -10;
 }
 .section-heading {
     font-size: 60px;
@@ -1203,6 +1249,14 @@ main {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    padding-top: 80px;
+}
+.map-subjects-section {
+    padding-top: 152px;
+    gap: 0px;
+}
+.map-subjects-section + .gallery-section {
+    padding-top: 0px;
 }
 .filter-panel {
     display: flex;
@@ -1369,10 +1423,17 @@ main {
 @media (min-width: 990px) {
     .gallery-photo.swiper-slide-active {
         width: 699px !important;
-        transition-property: height, width;
-        transition-duration: 400ms;
-        transition-timing-function: ease-in-out;
+        transition-property: all;
+        transition-duration: 800ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 80ms;
     }
+}
+.gallery-photo.swiper-slide:last-of-type {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
 }
 .map-section {
     position: relative;
@@ -1458,10 +1519,9 @@ main {
     color: var(--color-red);
     line-height: 24px;
 }
-.map-section .social-links {
+footer .social-links {
     display: flex;
     gap: 10px;
-    padding-top: 32px;
 }
 .map-section .right-column {
     min-width: 555px;
@@ -1637,6 +1697,10 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
+.services-card .right-column a {
+    transition: all 0.3s ease; 
+    height: 100%;
+}
 .service-card-header {
     display: flex;
     flex-direction: column;
@@ -1645,6 +1709,16 @@ main {
 .service-card-heading {
     font-size: 60px;
     line-height: 64px;
+    max-width: 90%;
+}
+.service-card-heading * {
+    transition: all 0.3s ease;
+}
+.service-card-heading p {
+    display: inline;
+}
+.service-card-heading p:hover {
+    opacity: 0.8;
 }
 .service-card-header .label {
     font-size: 16px;
@@ -1751,6 +1825,10 @@ main {
 .company-main-block p {
     font-size: 54px;
     line-height: 58px;
+}
+.service-page .company-main-block p {
+    transition: all 0.3s ease;
+    opacity: 0;
 }
 .company-main-block small {
     font-size: 20px;
@@ -1924,13 +2002,17 @@ spline-viewer {
     right: -540px;
     z-index: -10;
 
-    right: -700px;
+    right: -36vw;
+    /* width: 40vw; */
     top: -2100px;
     bottom: auto;
 
     /* top: -3 */
 }
 
+.contact-section {
+    align-items: center;
+}
 
 .swiper-quotes-prev,
 .swiper-quotes-next {
@@ -2013,6 +2095,51 @@ spline-viewer {
 
 .burger-button img.visible {
     opacity: 1;
+}
+.service-page .company-main-block small {
+    max-width: 814px;   
+}
+.service-stages {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+.service-stages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+section .container {
+    margin: 0px;
+}
+.service-stage-card {
+    padding: 23px 17px;
+    border-radius: 28px;
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: calc((100% - 16px * 4) / 5);
+}
+.service-stage-card .number {
+    font-size: 54px;
+    font-weight: 500;
+}
+.service-stage-card .name {
+    font-size: 18px;
+    line-height: 20px;
+}
+.service-stage-card small {
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+}
+section.service-page {
+    gap: 80px;
+}
+#map-svg {
+    width: 100%;
 }
 
 
@@ -2347,7 +2474,7 @@ spline-viewer {
         font-size: 16px;
         line-height: 16px;
     }
-    .map-section .social-links {
+    footer .social-links {
         padding-top: 0px;
     }
     .map-section .form-heading {

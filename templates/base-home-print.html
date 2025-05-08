@@ -40,64 +40,24 @@
     <meta property=og:description content="{% block meta_description %}{% endblock %}">
     {% block head %}
     {% endblock %}
+
+
+    <!-- FANDS -->
+    <link rel="stylesheet" href="{% static 'css/service-page.css' %}">
+    <script src="{% static 'js/home-page-open.js' %}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
-    <div id="modal" class="modal">
-        <!-- <div class="modal-content">
-            <div class="home__questions-right">
-                <form id="modalFeedbackForm" class="home__service-form" action="">
-                    {% csrf_token %}
-                    <div class="home__service-form-heading">
-                        <span>Свяжитесь с нами</span>
-                        <img id="closeModal" src="{% static 'images/cross-white.svg' %}" alt="Закрыть">
-                    </div>
-                    <div class="home__service-form-inputs">
-                        {{ feedback_form.name }}
-                        {{ feedback_form.phone }}
-                        {{ feedback_form.message }}
-                        <div class="form__checkbox">
-                            <div class=form__checkbox-wrap>
-                                <input checked type=checkbox id=consent name=consent required>
-                            </div>
-                            <div>
-                                <label for=consent class=form__checkbox-label>
-                                    Согласен с обработкой персональных данных
-                                </label>
-                            </div>
-                        </div>
-                        <button class="red-button">Отправить</button>
-                    </div>  
-                </form>
-            </div>
-        </div> -->
-    </div>
-    
-    <div id="modalSuccess" class="modalSuccess">
-        <!-- <div class="modal-success-content">
-           <div class="home__questions-right">
-            <div class="home__service-form">
-                <div class="home__service-form-heading">
-                    <span>Успешно отправлено</span>
-                    <img class="closeSuccessModal" src="{% static 'images/cross-white.svg' %}" alt="Закрыть">
-                </div>
-                
-                    <p>Вскоре наши менеджеры свяжутся с вами</p>
-                <button class="transparent-button closeSuccessModal">Закрыть</button>
-            </div>
-           </div>
-        </div> -->
-    </div>
-
-
     <header class="header">
         <div class="header__row">
             <div class="header__left-part">
               
-                    <div class="header__logo only-desktop">
-                        <a href="{% url 'home:home' %}" class="header__logo-link">
-                            <img src="{% static 'images/logo.svg' %}" alt="Логотип">
-                        </a>
-                    </div>
+                <div class="header__logo only-desktop">
+                    <a href="{% url 'home:home' %}" class="header__logo-link">
+                        <img src="{% static 'images/logo.svg' %}" alt="Логотип">
+                    </a>
+                </div>
               
                 <a class="only-mobile header-mobile-logo">
                     <img src="{% static 'images/logo.svg' %}" alt="">
@@ -148,6 +108,22 @@
 
         </div>
     </header>
+
+    <div class="animated-heading-container container">
+        <h1 class="page-heading">{{ service.name }}</h1>
+
+        <div class="wave-container">
+
+        </div>
+
+        <div class="wave-container-2">
+
+        </div>
+    </div>
+
+    <div>
+
+    </div>
 
     <main>
     {% block content %}

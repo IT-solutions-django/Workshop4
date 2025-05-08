@@ -25,8 +25,9 @@ class Article(models.Model):
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
     updated_at = models.DateTimeField('Дата обновления', auto_now=True)
     slug = models.SlugField('Ссылка', unique=True)
-    category = models.ForeignKey(ArticleCategory, on_delete=models.CASCADE)
+    category = models.ForeignKey(ArticleCategory, on_delete=models.CASCADE, related_name='articles')
     image = models.ImageField('Изображение', upload_to='blog/')
+    services = models.ManyToManyField('services.Service', verbose_name='Услуги', related_name='articles')
 
     def __str__(self):
         return self.name

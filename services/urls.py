@@ -7,4 +7,5 @@ app_name = 'services'
 
 urlpatterns = [
     path('', ServicesView.as_view(), name='services'),
+    path('<slug:slug>/', ServiceDetailView.as_view(), name='service_detail'),
 ]
