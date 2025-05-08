@@ -648,7 +648,7 @@ body,
 
 .welcome-section {
     padding-top: 66px;
-    position: relative;
+    /* position: relative; */
 
     padding-top: 5vh;
 
@@ -664,12 +664,12 @@ body,
     mix-blend-mode: normal;
 }
 .welcome-header {
-    padding-top: 190px;
+    /* padding-top: 190px; */
     display: flex;
     flex-direction: column;
     gap: 25px;
 
-    padding-top: 6vh;
+    /* padding-top: 6vh; */
 }
 .welcome-header h1 {
     font-size: 96px;
