@@ -1088,7 +1088,7 @@ section {
     border-radius: 28px;
     background-color: #333333;
     padding: 23px 37px 22px 17px;
-    height: 234px;
+    /* height: 234px; */
 }
 .stage-card-number {
     font-size: 54px;
@@ -2002,7 +2002,8 @@ spline-viewer {
     right: -540px;
     z-index: -10;
 
-    right: -700px;
+    right: -36vw;
+    /* width: 40vw; */
     top: -2100px;
     bottom: auto;
 
