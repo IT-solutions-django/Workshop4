@@ -1818,6 +1818,10 @@ footer .social-links {
     font-size: 54px;
     line-height: 58px;
 }
+.service-page .company-main-block p {
+    transition: all 0.3s ease;
+    opacity: 0;
+}
 .company-main-block small {
     font-size: 20px;
     line-height: 28px;
