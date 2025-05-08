@@ -21,7 +21,7 @@
             <div class="services-card">
                 <div class="left-column">
                     <div class="service-card-header">
-                        <p class="service-card-heading">{{ service.name }}</p>
+                        <a href="{{ service.get_absolute_url }}" class="service-card-heading"><p>{{ service.name }}</p> <div class="service-card-arrow"><img src="{% static 'images/service-arrow.svg' %}" alt=""></div></a>
                         <p class="label">{{ service.subtitle }}</p>
                     </div>
                     <div class="lower">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="right-column">
-                    <img class="services-card__image {% if service.is_image_small %}small{% endif %}" src="{{ service.image.url }}" alt="">
+                    <a href="{{ service.get_absolute_url }}"><img class="services-card__image {% if service.is_image_small %}small{% endif %}" src="{{ service.image.url }}" alt=""></a>
                     
                     {% if service.task_examples.all %}
                         <div class="badges-list-container">

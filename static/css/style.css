@@ -330,6 +330,20 @@ footer .left-column .address small {
     min-width: 244px;
     margin-right: 6%;
 }
+.service-card-arrow {
+    transform: translateY(3px);
+
+    display: inline-flex;
+
+    transition: all 0.3s ease;
+}
+.service-card-arrow:hover {
+    opacity: 0.7;
+}
+.service-card-arrow img {
+    width: 40px;
+    height: 40px;
+}
 
 .nav__dropdown-content-wrapper {
     text-transform: none;
@@ -1234,6 +1248,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    padding-top: 80px;
 }
 .filter-panel {
     display: flex;
@@ -1400,10 +1415,17 @@ main {
 @media (min-width: 990px) {
     .gallery-photo.swiper-slide-active {
         width: 699px !important;
-        transition-property: height, width;
-        transition-duration: 400ms;
-        transition-timing-function: ease-in-out;
+        transition-property: all;
+        transition-duration: 800ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 80ms;
     }
+}
+.gallery-photo.swiper-slide:last-of-type {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
 }
 .map-section {
     position: relative;
@@ -1667,6 +1689,10 @@ footer .social-links {
     flex-direction: column;
     justify-content: space-between;
 }
+.services-card .right-column a {
+    transition: all 0.3s ease; 
+    height: 100%;
+}
 .service-card-header {
     display: flex;
     flex-direction: column;
@@ -1675,6 +1701,16 @@ footer .social-links {
 .service-card-heading {
     font-size: 60px;
     line-height: 64px;
+    max-width: 90%;
+}
+.service-card-heading * {
+    transition: all 0.3s ease;
+}
+.service-card-heading p {
+    display: inline;
+}
+.service-card-heading p:hover {
+    opacity: 0.8;
 }
 .service-card-header .label {
     font-size: 16px;
@@ -2043,6 +2079,48 @@ spline-viewer {
 
 .burger-button img.visible {
     opacity: 1;
+}
+.service-page .company-main-block small {
+    max-width: 814px;   
+}
+.service-stages {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+.service-stages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+section .container {
+    margin: 0px;
+}
+.service-stage-card {
+    padding: 23px 17px;
+    border-radius: 28px;
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: calc((100% - 16px * 4) / 5);
+}
+.service-stage-card .number {
+    font-size: 54px;
+    font-weight: 500;
+}
+.service-stage-card .name {
+    font-size: 18px;
+    line-height: 20px;
+}
+.service-stage-card small {
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+}
+section.service-page {
+    gap: 80px;
 }
 
 

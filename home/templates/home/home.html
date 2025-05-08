@@ -231,37 +231,6 @@
 
 {% block script %}
 
-<!-- Галерея -->
-<script defer>
-    const gallerySwiper = new Swiper('.gallery-slider.swiper', {
-        spaceBetween: 24,
-        initialSlide: 0,
-        slidesOffsetBefore: 12,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        breakpoints: {
-          0: {
-            slidesPerView: 1.2,
-            spaceBetween: 12,
-          },
-          768: {
-            slidesPerView: 1.2,
-            spaceBetween: 24,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 24,
-          }
-        }
-      });
-</script>
-
 <script defer>
 const quotesSwiper = new Swiper('.quote.swiper', {
     spaceBetween: 1,
