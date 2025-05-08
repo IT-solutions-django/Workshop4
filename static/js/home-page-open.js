@@ -30,9 +30,11 @@ function runHomePreloader() {
         ]
 
         function runNextStep() {
-            if (currentIndex >= texts.length) {
-                setTimeout(onPrintComplete, 30);
-                return;
+
+            if (texts[currentIndex] == 'ЦЕХ №4') {
+                setTimeout(() => {
+                    onPrintComplete();
+                }, 100);
             }
 
             cont.text(texts[currentIndex]);
@@ -52,10 +54,14 @@ function runHomePreloader() {
         document.querySelector('.preloader-divider')?.classList.add('active');
 
         setTimeout(() => {
+            document.querySelector('h1').classList.add('big');
+        }, 260);
+
+        setTimeout(() => {
             main.classList.add('active');
             body.classList.add('active');
 
-            document.querySelector('h1').classList.add('big');
+            // document.querySelector('h1').classList.add('big');
             waveContainer.classList.add('active');
 
             setTimeout(() => {
