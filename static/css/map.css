@@ -1,0 +1,86 @@
+
+circle {
+    cursor: pointer;
+    position: absolute;
+    top: 500px
+}
+
+.rf-map {
+    width: 100%;
+    position: relative;
+}
+.rf-map svg {
+    width: 100%;
+}
+
+.map-tooltip-card {
+    position: absolute;
+    background: white;
+    border-radius: 28px;
+    height: 252px;
+    width: 269px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: block;
+    z-index: 1000;
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.3s ease;
+}
+.map-tooltip-card.visible {
+    opacity: 1;
+    pointer-events: auto;
+    user-select: auto;
+}
+
+.tooltip-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
+}
+.tooltip-inner::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+.tooltip-inner img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.tooltip-inner small, 
+.tooltip-inner p, 
+.tooltip-inner label {
+    z-index: 80;
+}
+
+.tooltip-inner p {
+    line-height: 22px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.tooltip-inner small {
+    font-size: 12px;
+}
+
+.tooltip-inner label {
+    font-size: 12px;
+}

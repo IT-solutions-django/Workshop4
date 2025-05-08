@@ -1,7 +1,9 @@
 {% load static %}
 
 <section class="partners-section container">
-    <img class="partners-background" src="{% static 'images/partners-background.png' %}" alt="">
+    {% if not is_home_page %}
+        <img class="partners-background" src="{% static 'images/partners-background.png' %}" alt="">
+    {% endif %}
     <img class="partners-bg-lines" src="{% static 'images/partners-bg-lines.png' %}" alt="">
     <h2 class="section-heading">Нам доверяют</h2>
     <div class="partners-body">

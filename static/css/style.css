@@ -643,7 +643,7 @@ body,
     border-radius: 0.8vh;
     /* width: 962px; */
 
-    height: 20vh;
+    height: 24vh;
 }
 
 .welcome-section {
@@ -1130,6 +1130,7 @@ main {
     position: absolute;
     right: -147px;
     bottom: -264px;
+    z-index: -10;
 
     right: -273px;
     bottom: -966px;
@@ -1249,6 +1250,13 @@ main {
     flex-direction: column;
     gap: 40px;
     padding-top: 80px;
+}
+.map-subjects-section {
+    padding-top: 152px;
+    gap: 0px;
+}
+.map-subjects-section + .gallery-section {
+    padding-top: 0px;
 }
 .filter-panel {
     display: flex;
@@ -2128,6 +2136,9 @@ section .container {
 }
 section.service-page {
     gap: 80px;
+}
+#map-svg {
+    width: 100%;
 }
 
 
