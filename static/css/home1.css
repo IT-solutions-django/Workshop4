@@ -1,0 +1,41 @@
+#anotherSvg .path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: logo-draw 3s linear forwards;
+  }
+  
+  @keyframes logo-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  #anotherSvg {
+    position: absolute;
+    left: 8.7vw;
+    top: 8.4vh;
+    width: 57vw;
+    height: 100%;
+    transform: translateY(-34px);
+}
+
+
+.bg {
+    opacity: 0;
+    transition: all 2s ease;
+}
+.bg.visible {
+    opacity: 1;
+
+}
+
+#anotherSvg.transparent {
+    opacity: 1;
+
+    transition: all 1.7s ease;
+}
+
+#anotherSvg.transparent {
+    opacity: 0;
+}
+
