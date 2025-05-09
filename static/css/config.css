@@ -4,5 +4,7 @@
     --color-darkened-white: #DDDDDD;
     --color-red: #C90000;
 
+    --color-light-gray: rgba(140, 140, 140, 1);
+
     --font-usual: 'Inter';
 }

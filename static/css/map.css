@@ -21,6 +21,7 @@ circle {
 .map-tooltip-card {
     position: absolute;
     background: white;
+    z-index: 10000;
     border-radius: 28px;
     height: 252px;
     width: 269px;
