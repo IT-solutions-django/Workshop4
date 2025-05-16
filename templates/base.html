@@ -276,18 +276,6 @@
                 console.error("Ошибка запроса:", n)
             }
         });
-
-        // Маска
-        document.querySelectorAll('input[type="tel"]').forEach(input => {
-            let phoneMask = IMask(input, { mask: "+{7} (000) 000-00-00" });
-
-            function validatePhoneNumber() {
-                let t = input.value.replace(/\D/g, "");
-                return t.length < 11 ? (input.setCustomValidity("Необходимо минимум 11 цифр"), !1) : (input.setCustomValidity(""), !0);
-            }
-
-            input.addEventListener("input", validatePhoneNumber);
-        });
     });
 
 </script>
@@ -333,7 +321,15 @@
 <!-- Маска для телефонов -->
 <script defer>
     document.querySelectorAll('input[type="tel"]').forEach(input => {
-            let phoneMask = IMask(input, { mask: "+{7} (000) 000-00-00" });
+            let phoneMask = IMask(input, {
+                mask: '+{7} (000) 000-00-00',
+                prepare: (str, masked) => {
+                    if (masked.value === '' && str === '8') {
+                        return '7';
+                    }
+                    return str;
+                }
+            });
 
             function validatePhoneNumber() {
                 let t = input.value.replace(/\D/g, "");
