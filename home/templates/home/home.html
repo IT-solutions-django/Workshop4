@@ -4,9 +4,6 @@
 {% block title %}Цех №4{% endblock title %}
 
 {% block content %}
-<!-- Odometer.js -->
-<script defer src="{% static 'js/odometer/odometer.js' %}"></script>
-<link rel="stylesheet" href="{% static 'css/odometer-default-theme.css' %}" />
 <!-- InView.js -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{% static 'js/inview/inview.js' %}"></script>
@@ -643,22 +640,41 @@ mapForm.addEventListener('submit', async (e) => {
 
 <script defer>
     // Анимации
+function animateNumber(el, target, duration = 1500) {
+  const start = 0;
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const current = Math.floor(progress * target);
+    el.textContent = current;
+
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target; // окончательное значение
+  }
+
+  requestAnimationFrame(update);
+}
 document.addEventListener('DOMContentLoaded', () => {
-    let projectsCount = document.querySelector('#projects-count'); 
-    let areaCount = document.querySelector('#area-count');
-    let bimCount = document.querySelector('#bim-count'); 
-
-    console.log(projectsCount)
-
+    const projectsCount = document.querySelector('#projects-count'); 
+    const areaCount = document.querySelector('#area-count');
+    const bimCount = document.querySelector('#bim-count'); 
 
     function runStatsAnimation() {
-        projectsCount.innerHTML = 150;
-        areaCount.innerHTML = 500; 
-        bimCount.innerHTML = 100; 
+        projectsCount.parentElement.classList.add('visible');
+        areaCount.parentElement.classList.add('visible');
+        bimCount.parentElement.classList.add('visible');
+
+        animateNumber(projectsCount, 150);
+        animateNumber(areaCount, 500);
+        animateNumber(bimCount, 100);
     }
 
+    // Запускаем анимацию, когда элемент входит в зону видимости
     inView('.advantages-stats-container').once('enter', runStatsAnimation);
 });
+
 </script>
 
 <!-- Галерея -->

@@ -983,11 +983,35 @@ section {
     justify-content: space-between;
     gap: 40px;
 }
+.advantages-stat .heading {
+    opacity: 0.2;
+    transition: all 1s ease;
+}
+#projects-count,
+#area-count, 
+#bim-count {
+    display: inline-block;
+    width: 145px;
+}
+#area-count {
+    width: 160px;
+}
+#bim-count {
+    width: 130px;
+}
+.advantages-stat .heading.visible {
+    opacity: 1;
+}
 .contact-section .left-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    justify-content: space-evenly;
+}
+.stage-cards.container {
+    max-width: fit-content;
+    min-height: 206px;
 }
 .contact-section .right-column {
     display: flex;
@@ -1074,6 +1098,7 @@ section {
     background-color: rgb(255, 255, 255, 0.1);
 }
 .stage-cards {
+    padding: 20px 0px 14px 0px;
     width: 100%;
     display: flex;
     gap: 16px !important;
