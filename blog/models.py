@@ -28,6 +28,7 @@ class Article(models.Model):
     category = models.ForeignKey(ArticleCategory, on_delete=models.CASCADE, related_name='articles')
     image = models.ImageField('Изображение', upload_to='blog/')
     services = models.ManyToManyField('services.Service', verbose_name='Услуги', related_name='articles')
+    is_popular = models.BooleanField('Популярная', default=False)
 
     def __str__(self):
         return self.name

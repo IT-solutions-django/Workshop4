@@ -56,7 +56,7 @@ function runHomePreloader() {
 
     randomRange = 120;
 
-    let fixedInterval = 40;
+    let fixedInterval = 20;
 
     function printHeading(onPrintComplete) {
         let timeout = fixedInterval;

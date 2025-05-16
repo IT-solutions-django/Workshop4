@@ -1276,6 +1276,10 @@ main {
     gap: 40px;
     padding-top: 80px;
 }
+.gallery-section.service-page {
+    padding-bottom: 80px;
+    gap: 42px;
+}
 .map-subjects-section {
     padding-top: 152px;
     overflow: visible;
@@ -2135,7 +2139,13 @@ spline-viewer {
     flex-direction: column;
     gap: 30px;
 }
-section .container {
+.section-heading.container {
+    margin: 0px;
+}
+.popular-articles {
+    padding-bottom: 62px;
+}
+.section .container {
     margin: 0px;
 }
 .service-stage-card {

@@ -30,15 +30,9 @@
 </section>
 
 {% if articles %}
-    <section class="gallery-section container">
+    <section class="service-page gallery-section container">
         <p class="section-heading container">Галерея проектов</p>
         <div class="gallery-body">
-            <div class="filter-panel container">
-                <a class="active">Все направления</a>
-                {% for category in categories %}
-                    <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
-                {% endfor %}
-            </div>
             <div class="gallery-slider swiper">
                 <div class="swiper-wrapper">
                     {% for article in articles %}
@@ -60,6 +54,24 @@
         </div>
     </section>
 {% endif %}
+
+<section class="popular-articles container">
+    <p class="section-heading">Популярное в блоге</p>
+    <div class="blog-body">
+        <div class="article-cards">
+            {% for article in popular_articles %}
+                <a href="{{ article.get_absolute_url }}" class="article-card {% if forloop.counter == 1 or forloop.counter == 6 or forloop.counter == 8 %}big{% endif %}">
+                    <img src="{{ article.image.url }}" alt="">
+                    <div class="badge">{{ article.created_at|date:"F Y" }}</div>
+                    <p class="article-heading">{{ article.name }}</p>
+                    <p class="article-label">{{ article.subtitle }}</p>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
 {% endblock %}
 
 
