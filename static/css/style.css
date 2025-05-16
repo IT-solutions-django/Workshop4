@@ -982,6 +982,7 @@ section {
     display: flex;
     justify-content: space-between;
     gap: 40px;
+    margin: 0;
 }
 .advantages-stat .heading {
     opacity: 0.2;
