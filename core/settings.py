@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://*.91.222.239.153', 
+    'http://*.ceh4.ru', 
 ]
 
 
