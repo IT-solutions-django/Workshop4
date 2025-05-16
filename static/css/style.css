@@ -1292,6 +1292,12 @@ main {
     display: flex;
     gap: 12px;
 }
+.filter-panel a {
+    cursor: pointer;
+}
+.map-subjects-section .filter-panel {
+    padding-top: 42px;
+}
 .filter-panel a,
 .filter-panel button {
     border-radius: 100px;

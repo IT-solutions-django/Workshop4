@@ -151,29 +151,6 @@
         display: none;
     }
 }
-/* Цвета регионов */
-.rf-map [data-code="RU-SAR"] {
-    fill: var(--color-light-gray);
-    cursor: pointer;
-}
-.rf-map [data-code="RU-SA"] {
-    fill: var(--color-light-gray);
-    cursor: pointer;
-}
-.rf-map [data-code="RU-KO"] {
-    fill: var(--color-light-gray);
-    cursor: pointer;
-}
-.rf-map [data-code="RU-SAR"]:hover {
-    fill: rgb(163, 163, 163);
-}
-.rf-map [data-code="RU-SA"]:hover {
-    fill: rgb(163, 163, 163);
-}
-.rf-map [data-code="RU-KO"]:hover {
-    fill: rgb(163, 163, 163);
-}
-
 
 
 /* Слайдер */
