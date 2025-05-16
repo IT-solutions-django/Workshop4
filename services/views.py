@@ -23,12 +23,15 @@ class ServiceDetailView(View):
 
         articles = Article.objects.filter(services=service)
         categories = ArticleCategory.objects.filter(articles__in=articles).distinct()
+
+        popular_articles = Article.objects.filter(is_popular=True)
         
 
         context = {
             'service': service,
             'articles': articles, 
-            'categories': categories
+            'categories': categories, 
+            'popular_articles': popular_articles,
         }
         return render(request, self.template_name, context)
 

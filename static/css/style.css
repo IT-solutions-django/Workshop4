@@ -982,12 +982,37 @@ section {
     display: flex;
     justify-content: space-between;
     gap: 40px;
+    margin: 0;
+}
+.advantages-stat .heading {
+    opacity: 0.2;
+    transition: all 1s ease;
+}
+#projects-count,
+#area-count, 
+#bim-count {
+    display: inline-block;
+    width: 145px;
+}
+#area-count {
+    width: 160px;
+}
+#bim-count {
+    width: 130px;
+}
+.advantages-stat .heading.visible {
+    opacity: 1;
 }
 .contact-section .left-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    justify-content: space-evenly;
+}
+.stage-cards.container {
+    max-width: fit-content;
+    min-height: 206px;
 }
 .contact-section .right-column {
     display: flex;
@@ -1074,6 +1099,7 @@ section {
     background-color: rgb(255, 255, 255, 0.1);
 }
 .stage-cards {
+    padding: 20px 0px 14px 0px;
     width: 100%;
     display: flex;
     gap: 16px !important;
@@ -1251,6 +1277,10 @@ main {
     gap: 40px;
     padding-top: 80px;
 }
+.gallery-section.service-page {
+    padding-bottom: 80px;
+    gap: 42px;
+}
 .map-subjects-section {
     padding-top: 152px;
     overflow: visible;
@@ -1262,6 +1292,12 @@ main {
 .filter-panel {
     display: flex;
     gap: 12px;
+}
+.filter-panel a {
+    cursor: pointer;
+}
+.map-subjects-section .filter-panel {
+    padding-top: 42px;
 }
 .filter-panel a,
 .filter-panel button {
@@ -2110,7 +2146,13 @@ spline-viewer {
     flex-direction: column;
     gap: 30px;
 }
-section .container {
+.section-heading.container {
+    margin: 0px;
+}
+.popular-articles {
+    padding-bottom: 62px;
+}
+.section .container {
     margin: 0px;
 }
 .service-stage-card {
